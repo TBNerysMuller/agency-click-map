@@ -199,3 +199,51 @@ html, body {
   opacity: 0.65;
   cursor: pointer;
 }
+
+/* === MOBILE STYLES (under 768px) === */
+@media (max-width: 768px) {
+  #agency-key {
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    background-color: rgba(0, 168, 233, 0.95);
+    display: none; /* hidden by default */
+    border-radius: 0;
+    padding: 10px;
+    box-shadow: none;
+    z-index: 1001;
+  }
+
+  #toggle-key {
+    display: block;
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    z-index: 1002;
+    background-color: #00a8e9;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+  }
+
+  .map-title {
+    font-size: 20px;
+  }
+
+  .logo-animate {
+    height: 40px;
+  }
+}
+
+/* Hide toggle button by default (desktop) */
+#toggle-key {
+  display: none;
+}
