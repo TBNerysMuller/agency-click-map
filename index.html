@@ -4,33 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
-  <link rel="stylesheet" href="style.css?v=1.8" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="path/to/Leaflet.timezones.js"></script>
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=1.7" />
 </head>
 <body>
-  <div id="map-header">
+  <header id="map-header">
     <div class="logo-title-wrapper">
-      <a href="https://conduitdigital.us" target="_blank">
-        <img src="logos/conduit-logo.png" alt="Conduit Digital" class="logo-animate" />
-      </a>
-      <h1 class="map-title fade-in">Agency Partner Map</h1>
+      <img src="logos/conduit-logo.svg" alt="Conduit Logo" class="logo-animate" />
+      <h1 class="map-title">Agency Partner Map</h1>
     </div>
-    <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--</div>
-  </div>
+    <div id="est-time" class="est-time-bar">Eastern Time (EST): --:--</div>
+  </header>
 
-  <div id="agency-key"></div>
+  <!-- Mobile Dropdown Button -->
+  <button class="agency-key-toggle" onclick="document.getElementById('agency-key').classList.toggle('show')">
+    Agencies
+  </button>
 
+  <!-- Map -->
   <div id="map"></div>
 
-  <a href="https://conduitdigital.us" target="_blank">
-    <img src="logos/conduit-logo-bug.png" class="logo-bug" alt="Conduit Bug Logo" />
-  </a>
+  <!-- Agency Key List -->
+  <div id="agency-key"></div>
 
+  <!-- Conduit Bug Logo -->
+  <img src="logos/conduit-logo-bug.svg" alt="Conduit Bug Logo" class="logo-bug" />
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- Custom Script -->
   <script src="script.js"></script>
 </body>
 </html>
