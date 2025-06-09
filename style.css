@@ -1,169 +1,185 @@
-/* ====== GENERAL ====== */
+/* General Reset */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  height: 100%;
+  overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+/* Map container */
+#map {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-/* ====== HEADER ====== */
+/* Header */
 #map-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 80px;
+  background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background-color: #000;
-  z-index: 1000;
+  padding: 0 20px;
+  z-index: 999;
 }
 
 .logo-title-wrapper {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
-.logo-animate {
-  height: 56px;
-  max-width: 240px;
+.logo-title-wrapper img.logo-animate {
+  height: 48px;
+  width: auto;
   object-fit: contain;
-  display: block;
-  flex-shrink: 0;
 }
 
-.map-title {
-  font-size: 48px;
-  color: #00a8e9;
+.logo-title-wrapper h1 {
+  font-size: 32px;
   font-weight: 700;
-  margin: 0;
-}
-
-.fade-in {
-  animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ====== MAP ====== */
-#map {
-  height: 100vh;
-  width: 100%;
-  z-index: 1;
-  position: relative;
-  margin-top: 96px; /* offset for fixed header */
-}
-
-/* ====== POPUP ====== */
-.leaflet-popup-content {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: black;
-  text-align: center;
-}
-
-.leaflet-popup-content h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
   color: #00a8e9;
+  margin: 0;
+  white-space: nowrap;
 }
 
-/* ====== AGENCY KEY ====== */
-#agency-key {
-  position: fixed;
-  top: 120px;
-  left: 20px;
-  width: 240px;
-  max-height: 70vh;
-  overflow-y: auto;
-  background: rgba(0, 168, 233, 0.2);
-  padding: 12px;
-  border-radius: 8px;
-  z-index: 999;
-}
-
-.agency-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 0;
-  cursor: pointer;
-}
-
-.agency-item img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
-
-.agency-item span {
-  font-size: 14px;
-  color: black;
-  font-weight: 400;
-}
-
-/* ====== EST TIME BAR ====== */
+/* Eastern Time Bar */
 .est-time-bar {
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  margin-left: auto;
+  color: #fff;
+  font-size: 18px;
+  padding-right: 12px;
+  white-space: nowrap;
 }
 
-/* ====== BUG LOGO ====== */
+/* Bug Logo */
 .logo-bug {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  height: 80px;
-  width: auto;
-  z-index: 1000;
+  width: 60px;
+  height: auto;
+  z-index: 999;
 }
 
-/* ====== RESPONSIVE ====== */
+/* Agency Key */
+#agency-key {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background: rgba(0, 168, 233, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 999;
+  width: 220px;
+}
+
+.agency-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.agency-entry img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+}
+
+.agency-entry span {
+  font-size: 14px;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  font-family: 'Poppins', sans-serif;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+}
+
+.leaflet-popup-content h3 {
+  margin: 4px 0;
+  color: #00a8e9;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.leaflet-popup-content p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Button for mobile dropdown */
+#agency-toggle {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #00a8e9;
+  color: white;
+  font-size: 14px;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-  .map-title {
-    font-size: 24px;
+  #map-header {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  .logo-animate {
-    height: 32px;
-    max-width: 120px;
-  }
-
-  #agency-key {
-    top: auto;
-    bottom: 100px;
-    width: 100%;
-    left: 0;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    border-radius: 0;
-  }
-
-  .agency-item {
-    justify-content: center;
-  }
-
-  .logo-bug {
-    height: 60px;
+  .logo-title-wrapper h1 {
+    font-size: 20px;
   }
 
   .est-time-bar {
-    font-size: 12px;
+    font-size: 14px;
+    padding-right: 6px;
+  }
+
+  .logo-title-wrapper img.logo-animate {
+    height: 36px;
+  }
+
+  .logo-bug {
+    width: 40px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  #agency-key {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 168, 233, 0.2);
+    width: 100%;
+    max-height: 40vh;
+    overflow-y: auto;
+    padding: 10px;
+  }
+
+  #agency-toggle {
+    display: block;
   }
 }
