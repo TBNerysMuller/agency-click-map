@@ -1,18 +1,21 @@
 // Initialize the map
 const map = L.map('map').setView([39.8283, -98.5795], 4);
 
-// ✅ Add timezone overlay
-L.timezones.addTo(map);
-
-// Optional: show timezone name on click
-L.timezones
-  .bindPopup(layer => layer.feature.properties.time_zone)
-  .addTo(map);
-
-// Add tile layer using CartoDB Positron (free version)
+// Add tile layer using CartoDB Positron (light mode, free)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & contributors'
 }).addTo(map);
+
+function getLiveTimeInZone(timeZone) {
+  const now = new Date();
+  const options = {
+    timeZone,
+    hour: '2-digit',
+    minute: '2-digit'
+  };
+  const formatter = new Intl.DateTimeFormat([], options);
+  return formatter.format(now);
+}
 
 // Load agency data
 fetch('agencies.json')
@@ -28,13 +31,17 @@ fetch('agencies.json')
 
       const marker = L.marker([agency.lat, agency.lng], { icon }).addTo(map);
 
+      const localTime = getLiveTimeInZone(agency.timezone);
+
       const popupHTML = `
         <div>
           <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" /><br/>
           <h3>${agency.name}</h3>
           <div>${agency.location}</div>
           <div style="margin-top:5px;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
-          <div style="margin-top:5px;font-size:12px;color:#333;">Timezone: ${agency.timezone}</div>
+          <div style="margin-top:5px;font-size:12px;color:#333;">
+            Timezone: ${agency.timezone} (${localTime})
+          </div>
         </div>
       `;
 
