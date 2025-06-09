@@ -1,0 +1,92 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  color: #f2f2f2;
+}
+
+#map {
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+#map-header {
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid #00a8e9;
+}
+
+#map-header img {
+  height: 50px;
+  margin-right: 15px;
+}
+
+#map-header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #00a8e9;
+  margin: 0;
+}
+
+/* Tile color tinting */
+.leaflet-tile {
+  filter: hue-rotate(180deg) saturate(200%) brightness(70%);
+}
+
+/* Popup content styling */
+.leaflet-popup-content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.leaflet-popup-content h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: #00a8e9;
+  margin: 0.5em 0 0.25em;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: #f2f2f2;
+}
+
+.leaflet-popup-content .location {
+  color: black;
+  font-weight: 500;
+}
+
+.leaflet-popup-content a {
+  color: #00a8e9;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.leaflet-popup-content img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+/* Marker label styling */
+.leaflet-tooltip.marker-label {
+  background: transparent;
+  border: none;
+  color: #00a8e9;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+  pointer-events: none;
+}
