@@ -1,184 +1,169 @@
-/* ====== GENERAL ====== */
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
   font-family: 'Poppins', sans-serif;
-  background-color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-}
-
-/* ====== HEADER ====== */
-#map-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+header.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background-color: #000;
-  z-index: 1000;
-  flex-wrap: nowrap;
-  gap: 24px;
+  background: #000;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  flex-wrap: wrap;
 }
 
-.logo-title-wrapper {
+.header-left {
   display: flex;
   align-items: center;
-  gap: 16px;
-  white-space: nowrap;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.logo-animate {
-  height: 56px;
-  max-width: 240px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
+.logo-icon {
+  height: 28px;
+  width: auto;
 }
 
-.map-title {
-  font-size: 40px;
-  color: #00a8e9;
+.logo-text {
+  height: 20px;
+  width: auto;
+}
+
+.title {
+  font-size: 1.25rem;
   font-weight: 700;
-  margin: 0;
+  color: #00a8e9;
+  margin: 0 0 0 0.5rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  padding-right: 1rem;
   white-space: nowrap;
 }
 
-/* ====== MAP ====== */
 #map {
   height: 100vh;
   width: 100%;
-  z-index: 1;
   position: relative;
-  margin-top: 96px; /* offset for fixed header */
+  z-index: 1;
 }
 
-/* ====== POPUP ====== */
-.leaflet-popup-content {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: black;
-  text-align: center;
-}
-
-.leaflet-popup-content h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #00a8e9;
-}
-
-/* ====== AGENCY KEY ====== */
-#agency-key {
-  position: fixed;
-  top: 120px;
-  left: 20px;
-  width: 240px;
-  max-height: 70vh;
-  overflow-y: auto;
+.agency-key {
+  position: absolute;
+  top: 80px;
+  left: 12px;
   background: rgba(0, 168, 233, 0.2);
-  padding: 12px;
-  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+}
+
+.agency-key ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.agency-key li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.agency-key li img.agency-icon {
+  height: 24px;
+  width: auto;
+}
+
+.bug-logo {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  height: 40px;
+  width: auto;
   z-index: 999;
 }
 
-.agency-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 0;
+.leaflet-popup-content {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.leaflet-popup-content h3 {
+  font-size: 1rem;
+  color: #00a8e9;
+  margin: 0.25rem 0;
+}
+
+.leaflet-popup-content img {
+  max-width: 60px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-toggle {
+  display: none;
+  background-color: #00a8e9;
+  color: white;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-.agency-item img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
-
-.agency-item span {
-  font-size: 14px;
-  color: black;
-  font-weight: 400;
-}
-
-/* ====== EST TIME BAR ====== */
-.est-time-bar {
-  color: white;
-  font-size: 24px;
-  font-weight: 400;
-  font-family: 'Poppins', sans-serif;
-  padding: 12px 32px 12px 12px;
-  margin-left: auto;
-  white-space: nowrap;
-}
-
-/* ====== BUG LOGO ====== */
-.logo-bug {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  height: 60px;
-  width: auto;
-  z-index: 1000;
-}
-
-/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .map-title {
-    font-size: 24px;
+  .dropdown-toggle {
+    display: inline-block;
   }
 
-  .logo-animate {
-    height: 32px;
-    max-width: 120px;
-  }
-
-  #agency-key {
-    top: auto;
-    bottom: 100px;
-    width: 100%;
-    left: 0;
-    padding: 10px;
+  .agency-key {
     display: none;
-    flex-direction: column;
-    gap: 8px;
-    border-radius: 0;
-    background: rgba(0, 168, 233, 0.85);
+    top: 64px;
+    left: 12px;
   }
 
-  .agency-key-toggle {
-    position: fixed;
-    bottom: 160px;
-    right: 20px;
-    z-index: 1000;
-    background: #00a8e9;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 14px;
-    font-size: 16px;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
+  .agency-key.open {
+    display: block;
   }
 
-  .agency-item {
-    justify-content: center;
+  .header-left {
+    gap: 0.3rem;
   }
 
-  .logo-bug {
-    height: 48px;
+  .title {
+    font-size: 1rem;
   }
 
-  .est-time-bar {
-    font-size: 16px;
-    padding: 8px 16px;
+  .logo-icon {
+    height: 20px;
   }
+
+  .logo-text {
+    height: 16px;
+  }
+
+  .header-right {
+    font-size: 0.85rem;
+    padding-right: 0.25rem;
+  }
+}
+
+/* Pad time display from edge */
+#easternTime {
+  padding-right: 1rem;
 }
