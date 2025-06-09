@@ -21,29 +21,31 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
   height: 80px;
   padding: 0 20px;
   background: black;
-  overflow: hidden;  /* Ensures overflowing parts get clipped */
-}
-
-.map-title {
-  font-size: 32px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  color: #00a8e9;
-  margin: 0;
-  opacity: 1 !important;
-  white-space: nowrap;
+  overflow: hidden;
 }
 
 .logo-animate {
-  height: 48px;     /* Match the map-title's font-size visually */
-  max-width: 200px;
+  height: 48px;
+  max-width: 180px;
   object-fit: contain;
   display: block;
-  opacity: 1;
+  flex-shrink: 0; /* Do not shrink */
 }
+
+.map-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #00a8e9;
+  margin: 0;
+  white-space: nowrap;
+  flex-grow: 1;
+  text-align: right;
+  opacity: 1 !important;
 }
 
 .header-left {
