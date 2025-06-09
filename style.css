@@ -49,3 +49,26 @@ html, body {
   padding: 0;
   pointer-events: none;
 }
+
+.leaflet-popup-content p {
+  margin: 0;
+  font-weight: 400;
+}
+
+.leaflet-popup-content img {
+  width: 80px;
+  height: auto;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+.leaflet-tooltip.marker-label {
+  background: transparent;
+  border: none;
+  color: #00a8e9;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  padding: 0;
+  pointer-events: none;
+}
