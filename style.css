@@ -145,7 +145,8 @@ html, body {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  height: 60px;       /* scaled version of tall image */
+  max-height: 100px;        /* adjust this to control how tall it appears */
+  height: auto;
   width: auto;
   z-index: 999;
   object-fit: contain;
