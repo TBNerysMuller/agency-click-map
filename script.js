@@ -100,4 +100,3 @@ if (toggleBtn) {
 } else {
   console.warn('Toggle button not found');
 }
-
