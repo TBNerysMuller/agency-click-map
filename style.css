@@ -46,15 +46,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.fade-in {
-  animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
 /* ====== MAP ====== */
 #map {
   height: 100vh;
@@ -116,9 +107,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ====== EST TIME BAR ====== */
 .est-time-bar {
   color: white;
-  font-size: 14px;
+  font-size: 32px;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
+  padding: 8px 16px;
   margin-left: auto;
 }
 
@@ -164,6 +156,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .est-time-bar {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
