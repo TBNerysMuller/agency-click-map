@@ -17,6 +17,7 @@ html, body {
   background: black;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 20px;
   border-bottom: 2px solid #00a8e9;
 }
@@ -31,6 +32,7 @@ html, body {
   font-weight: 700;
   color: #00a8e9;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Tile color tinting */
