@@ -47,14 +47,12 @@ fetch('agencies.json')
       const localTime = getLiveTimeInZone(agency.timezone);
 
       const popupHTML = `
-        <div>
-          <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" /><br/>
-          <h3 style="color:#00a8e9;font-family:'Poppins',sans-serif;font-size:16px;">${agency.name}</h3>
-          <div style="font-family:'Poppins',sans-serif;color:black;">${agency.location}</div>
-          <div style="margin-top:5px;font-family:'Poppins',sans-serif;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
-          <div style="margin-top:5px;font-size:12px;color:#333;font-family:'Poppins',sans-serif;">
-            Timezone: ${agency.timezone} (${localTime})
-          </div>
+        <div style="text-align:center;font-family:'Poppins',sans-serif;">
+          <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" />
+            <h3 style="color:#00a8e9;margin-bottom:4px;">${agency.name}</h3>
+            <div>${agency.location}</div>
+            <div style="font-size:12px;margin-top:4px;">Time (${agency.timezone.split('/')[1]}): ${localTime}</div>
+            <div style="margin-top:5px;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
         </div>
       `;
 
