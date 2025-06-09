@@ -27,6 +27,12 @@ html, body {
   margin-right: 15px;
 }
 
+#map-header img:hover {
+  opacity: 0.85;
+  cursor: pointer;
+
+}
+
 #map-header h1 {
   font-size: 48px;
   font-weight: 700;
