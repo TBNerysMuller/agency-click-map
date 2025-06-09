@@ -1,16 +1,16 @@
 [
   {
     "name": "Conduit Digital",
-    "location": "Tom's River, New Jersey",
+    "location": "Tom's River, NJ, USA",
     "timezone": "Eastern Time (EST)",
     "lat": 39.9634,
     "lng": -74.1873,
-    "logo": "conduit-icon.png",
+    "logo": "conduit.png",
     "link": "https://conduitdigital.us"
   },
   {
     "name": "2626 Consulting",
-    "location": "Chicago, Illinois",
+    "location": "Chicago, ILA, USA",
     "timezone": "Central Time (CST)",
     "lat": 41.8781,
     "lng": -87.6298,
@@ -19,7 +19,7 @@
   },
   {
     "name": "Agency Development Solutions",
-    "location": "Louisville, Kentucky",
+    "location": "Louisville, KY, USA",
     "timezone": "Eastern Time (EST)",
     "lat": 38.2527,
     "lng": -85.7585,
@@ -28,7 +28,7 @@
   },
   {
     "name": "Ascend Strategy & Design",
-    "location": "Valdosta, Georgia",
+    "location": "Valdosta, GA, USA",
     "timezone": "Eastern Time (EST)",
     "lat": 30.8327,
     "lng": -83.2785,
@@ -37,7 +37,7 @@
   },
   {
     "name": "Bend Marketing",
-    "location": "South Bend, Indiana",
+    "location": "South Bend, IN, USA",
     "timezone": "Eastern Time (EST)",
     "lat": 41.6764,
     "lng": -86.2520,
