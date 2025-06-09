@@ -26,7 +26,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 25px;
   border-bottom: 2px solid #00a8e9;
   z-index: 1001;
 }
@@ -117,41 +117,26 @@ html, body {
 
 /* Animate title */
 .map-title {
-  font-size: 48px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
   font-weight: 700;
   color: #00a8e9;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  animation: slideFade 1.2s ease-out forwards;
   opacity: 0;
-  animation: slideFade 1.5s ease-out forwards;
-  animation-delay: 0.5s;
+  text-align: right;
+  white-space: nowrap;
 }
 
-/* Animate Conduit logo */
-.logo-animate {
-  height: 50px;
-  animation: popIn 1.2s ease-in-out forwards;
-  opacity: 0;
+.header-left,
+.header-right {
+  display: flex;
+  align-items: center;
 }
 
-@keyframes slideFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes popIn {
-  0% {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+.header-right {
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 
 #agency-key {
