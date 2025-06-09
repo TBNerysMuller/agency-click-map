@@ -2,43 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agency Click Map</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agency Partner Map</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
 </head>
 <body>
-
-  <!-- HEADER -->
   <header id="map-header">
-  <div class="header-left">
-    <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
-      <img src="logos/Conduit.png" alt="Conduit Logo" />
-    </a>
-  </div>
-  <div class="header-right">
-    <h1 class="map-title">Agency Partner Map</h1>
-  </div>
-</header>
-
-  <!-- LOGO BUG IN BOTTOM LEFT -->
-  <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
-    <img src="logos/conduit_bug.png" alt="Conduit Logo Bug" id="logo-bug" />
-  </a>
-
-   <!-- SIDEBAR KEY -->
-  <div id="agency-key"></div>
+    <div class="header-left">
+      <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
+        <img src="logos/conduit-logo.png" alt="Conduit Logo" class="logo-animate" />
+      </a>
+    </div>
+    <div class="header-right">
+      <h1 class="map-title">AGENCY PARTNER MAP</h1>
+    </div>
+  </header>
 
   <button id="toggle-key" onclick="toggleKey()">☰ Agencies</button>
 
-  <!-- MAP -->
+  <div id="agency-key"></div>
+
   <div id="map"></div>
 
-  <!-- LEAFLET JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
+    <img src="logos/conduit-logo-bug.png" alt="Conduit Logo Bug" id="logo-bug" />
+  </a>
 
-  <!-- MAP SCRIPT -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
     const map = L.map('map').setView([39.8283, -98.5795], 4);
 
@@ -50,53 +47,39 @@
     fetch('agencies.json')
       .then(res => res.json())
       .then(agencies => {
-        const markers = {};
-        const keyContainer = document.getElementById('agency-key');
-
         agencies.forEach(a => {
-          const icon = L.icon({
-            iconUrl: a.logo,
-            iconSize: [40, 40],
-            iconAnchor: [20, 40],
-            popupAnchor: [0, -40]
-          });
-
-          const marker = L.marker([a.lat, a.lon], { icon }).addTo(map);
-
+          const marker = L.marker([a.lat, a.lng]).addTo(map);
           marker.bindPopup(`
-            <div class="popup-content">
-              <img src="${a.logo}" alt="${a.name} logo" />
-              <h3>${a.name}</h3>
-              <p class="location">${a.address}</p>
-              <p><a href="mailto:${a.contact}">${a.contact}</a></p>
+            <div style="text-align: center; font-family: 'Poppins', sans-serif;">
+              <img src="logos/${a.logo}" alt="${a.name} Logo" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;" />
+              <h3 style="margin: 5px 0; color: black; font-weight: 700;">${a.name}</h3>
+              <p style="margin: 2px 0; color: black; font-size: 14px;">${a.location}</p>
+              <p style="margin: 2px 0; color: black; font-size: 14px;"><a href="${a.link}" target="_blank">Website</a></p>
             </div>
           `);
 
-          markers[a.name] = marker;
-
-          // Add to sidebar key
           const entry = document.createElement('div');
           entry.className = 'agency-entry';
           entry.innerHTML = `
-            <img src="${a.logo}" alt="${a.name} logo" />
+            <img src="logos/${a.logo}" alt="${a.name} Logo" />
             <span>${a.name}</span>
           `;
-          entry.addEventListener('click', () => {
-            map.setView([a.lat, a.lon], 6);
+          entry.onclick = () => {
+            map.setView([a.lat, a.lng], 6);
             marker.openPopup();
-          });
-
-          keyContainer.appendChild(entry);
+          };
+          document.getElementById('agency-key').appendChild(entry);
         });
       });
-        function toggleKey() {
-          const key = document.getElementById('agency-key');
-          if (key.style.display === "block") {
-              key.style.display = "none";
-          } else {
-              key.style.display = "block";
-  }
-}
+
+    function toggleKey() {
+      const key = document.getElementById('agency-key');
+      if (key.style.display === 'block') {
+        key.style.display = 'none';
+      } else {
+        key.style.display = 'block';
+      }
+    }
   </script>
 </body>
 </html>
