@@ -76,3 +76,14 @@ function updateESTTime() {
 }
 setInterval(updateESTTime, 1000);
 updateESTTime();
+
+// Mobile toggle for agency key dropdown
+const toggleBtn = document.querySelector('.agency-key-toggle');
+const agencyKey = document.getElementById('agency-key');
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    agencyKey.classList.toggle('show');
+  });
+} else {
+  console.warn('Toggle button not found');
+}
