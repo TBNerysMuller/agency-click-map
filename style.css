@@ -141,12 +141,16 @@ html, body {
 
 /* Logo bug styling (bottom left) */
 #logo-bug {
-  position: fixed;          /* ensures it stays in bottom-left of viewport */
-  bottom: 20px;
-  left: 20px;
-  height: auto;
-  max-height: 65px;        /* controls vertical size */
+  position: fixed;
+  bottom: 15px;          /* match top padding of header */
+  left: 15px;            /* match left-side header logo spacing */
+  height: 45px;          /* a tad smaller than 50px header logo */
   width: auto;
   z-index: 999;
   object-fit: contain;
+}
+
+#logo-bug:hover {
+  opacity: 0.85;
+  cursor: pointer;
 }
