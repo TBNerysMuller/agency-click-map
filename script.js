@@ -1,59 +1,78 @@
+// Initialize the map
+const map = L.map('map').setView([39.8283, -98.5795], 4); // Centered on US
 
-// Wait for the DOM to load
-document.addEventListener('DOMContentLoaded', function () {
-  const map = L.map('map').setView([39.8283, -98.5795], 4); // Center of the US
+// Load CartoDB Positron tiles (free)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors & CartoDB',
+  subdomains: 'abcd',
+  maxZoom: 19
+}).addTo(map);
 
-  // Add tile layer
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
+// Function to get live time in the specified time zone
+function getLiveTime(tz) {
+  const now = new Date().toLocaleTimeString('en-US', {
+    timeZone: tz,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  return now;
+}
 
-  // Load agency data
-  fetch('agencies.json')
-    .then(response => response.json())
-    .then(agencies => {
-      agencies.forEach(agency => {
-        const customIcon = L.icon({
-          iconUrl: agency.icon,
-          iconSize: [48, 48],
-          iconAnchor: [24, 48],
-          popupAnchor: [0, -48]
-        });
+// Load agency data
+fetch('agencies.json')
+  .then(response => response.json())
+  .then(data => {
+    const keyContainer = document.getElementById('agency-key');
 
-        const marker = L.marker([agency.lat, agency.lng], { icon: customIcon }).addTo(map);
-
-        const timezone = agency.timezone;
-        const localTime = new Date().toLocaleString('en-US', { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
-
-        const popupContent = \`
-          <div class="popup-content">
-            <img src="\${agency.icon}" alt="\${agency.name}" style="width: 40px; height: 40px; margin-bottom: 8px;" />
-            <h3>\${agency.name}</h3>
-            <p>\${agency.city}, \${agency.state}</p>
-            <p>Time: (\${timezone}) \${localTime}</p>
-            <a href="\${agency.website}" target="_blank">Visit Website</a>
-          </div>
-        \`;
-
-        marker.bindPopup(popupContent);
+    data.forEach(agency => {
+      const customIcon = L.icon({
+        iconUrl: agency.icon,
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
       });
-    });
 
-  // EST Clock
-  function updateESTClock() {
-    const now = new Date().toLocaleTimeString('en-US', {
-      timeZone: 'America/New_York',
-      hour12: false,
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
-    const estBar = document.getElementById('est-time');
-    if (estBar) estBar.textContent = 'Eastern Time (EST): ' + now;
-  }
+      const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
 
-  setInterval(updateESTClock, 1000);
-  updateESTClock();
-});
+      const popupHTML = `
+        <div style="text-align:center">
+          <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
+          <h3>${agency.name}</h3>
+          <div>${agency.city}, ${agency.state}</div>
+          <div>Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
+          <a href="${agency.website}" target="_blank">Visit Website</a>
+        </div>
+      `;
+      marker.bindPopup(popupHTML);
+
+      // Add to agency key
+      const keyItem = document.createElement('div');
+      keyItem.classList.add('key-entry');
+      keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
+      keyContainer.appendChild(keyItem);
+    });
+  });
+
+// Eastern Time Clock
+function updateEasternClock() {
+  const estClock = document.getElementById('est-time');
+  const now = new Date().toLocaleTimeString('en-US', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  estClock.textContent = `Eastern Time (EST): ${now}`;
+}
+setInterval(updateEasternClock, 1000);
+updateEasternClock();
+
+// Mobile Toggle
+const toggleButton = document.getElementById('toggle-key');
+if (toggleButton) {
+  toggleButton.addEventListener('click', () => {
+    const key = document.getElementById('agency-key');
+    key.style.display = key.style.display === 'block' ? 'none' : 'block';
+  });
+}
