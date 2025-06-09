@@ -87,3 +87,47 @@ html, body {
   padding: 0;
   pointer-events: none;
 }
+
+#map-header {
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid #00a8e9;
+}
+
+#map-header img {
+  height: 50px;
+}
+
+.map-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #00a8e9;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  animation: slideFade 1.2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes slideFade {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#logo-bug {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
+  z-index: 999;
+}
