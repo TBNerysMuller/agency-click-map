@@ -57,3 +57,6 @@ html, body {
   padding: 0;
   pointer-events: none;
 }
+.leaflet-tile {
+  filter: hue-rotate(180deg) saturate(200%) brightness(70%);
+}
