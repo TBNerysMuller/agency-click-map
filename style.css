@@ -1,1 +1,25 @@
-/* Final CSS will go here (inserted earlier) */
+.map-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #00a8e9;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 1 !important;
+  text-align: right;
+  animation: none !important;
+}
+
+.logo-animate {
+  height: 40px;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .logo-animate {
+    height: 32px;
+    max-width: 120px;
+  }
+}/* Final CSS will go here (inserted earlier) */
