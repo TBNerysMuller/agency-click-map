@@ -147,15 +147,16 @@ html, body {
 
 #agency-key {
   position: fixed;
-  top: 80px; /* below the header */
-  left: 0;
-  width: 300px;
-  height: calc(100vh - 80px);
-  background-color: rgba(0, 168, 233, 0.15);
+  top: 100px; /* lower than the header, but still visible */
+  left: 20px;
+  width: 280px;
+  max-height: 80vh;
   overflow-y: auto;
+  background-color: rgba(0, 168, 233, 0.1); /* soft translucent Conduit Blue */
   padding: 15px;
-  box-shadow: 2px 0 8px rgba(0, 168, 233, 0.4);
-  z-index: 998;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 168, 233, 0.3);
+  z-index: 1000;
 }
 
 .agency-entry {
