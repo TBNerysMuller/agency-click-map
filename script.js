@@ -6,6 +6,13 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & contributors'
 }).addTo(map);
 
+// Add timezone overlay using Leaflet.timezones plugin
+if (L.timezones) {
+  L.timezones.addTo(map);
+} else {
+  console.warn('Leaflet.timezones plugin not found');
+}
+
 function getLiveTimeInZone(timeZone) {
   const now = new Date();
   const options = {
@@ -36,10 +43,10 @@ fetch('agencies.json')
       const popupHTML = `
         <div>
           <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" /><br/>
-          <h3>${agency.name}</h3>
-          <div>${agency.location}</div>
-          <div style="margin-top:5px;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
-          <div style="margin-top:5px;font-size:12px;color:#333;">
+          <h3 style="color:#00a8e9;font-family:'Poppins',sans-serif;font-size:16px;">${agency.name}</h3>
+          <div style="font-family:'Poppins',sans-serif;color:black;">${agency.location}</div>
+          <div style="margin-top:5px;font-family:'Poppins',sans-serif;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
+          <div style="margin-top:5px;font-size:12px;color:#333;font-family:'Poppins',sans-serif;">
             Timezone: ${agency.timezone} (${localTime})
           </div>
         </div>
@@ -87,3 +94,4 @@ if (toggleBtn) {
 } else {
   console.warn('Toggle button not found');
 }
+
