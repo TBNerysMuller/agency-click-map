@@ -35,7 +35,7 @@ html, body {
 
 /* Tile color tinting */
 .leaflet-tile {
-  filter: hue-rotate(180deg) saturate(200%) brightness(70%);
+  filter: brightness(0) saturate(100%) invert(55%) sepia(15%) saturate(6245%) hue-rotate(161deg) brightness(93%) contrast(102%);
 }
 
 /* Popup content styling */
