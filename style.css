@@ -141,7 +141,7 @@ html, body {
 
 #agency-key {
   position: fixed;
-  top: 110px;               /* moved down to clear + / - */
+  top: 300px;               /* moved down to clear + / - */
   left: 20px;
   width: 240px;             /* slightly narrower */
   max-height: 70vh;         /* smaller overall */
