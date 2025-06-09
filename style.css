@@ -107,8 +107,9 @@ html, body {
   color: #00a8e9;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  animation: slideFade 1.2s ease-out forwards;
   opacity: 0;
+  animation: slideFade 1.5s ease-out forwards;
+  animation-delay: 0.5s;
 }
 
 /* Animate Conduit logo */
@@ -120,11 +121,9 @@ html, body {
 
 @keyframes slideFade {
   0% {
-    transform: translateY(-10px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0);
     opacity: 1;
   }
 }
