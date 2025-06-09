@@ -2,6 +2,7 @@
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: #fff;
 }
@@ -43,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .map-title {
-  font-size: 48px;
+  font-size: 40px;
   color: #00a8e9;
   font-weight: 700;
   margin: 0;
@@ -114,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 24px;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  padding: 12px 24px;
+  padding: 12px 32px 12px 12px;
   margin-left: auto;
   white-space: nowrap;
 }
@@ -124,7 +125,7 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  height: 80px;
+  height: 60px;
   width: auto;
   z-index: 1000;
 }
@@ -146,10 +147,26 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     left: 0;
     padding: 10px;
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 8px;
     border-radius: 0;
+    background: rgba(0, 168, 233, 0.85);
+  }
+
+  .agency-key-toggle {
+    position: fixed;
+    bottom: 160px;
+    right: 20px;
+    z-index: 1000;
+    background: #00a8e9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
   }
 
   .agency-item {
@@ -157,11 +174,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .logo-bug {
-    height: 60px;
+    height: 48px;
   }
 
   .est-time-bar {
-    font-size: 20px;
-    padding: 15px 16px;
+    font-size: 16px;
+    padding: 8px 16px;
   }
 }
