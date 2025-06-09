@@ -1,18 +1,18 @@
 [
   {
     "name": "2626 Consulting",
-    "logo": "logos/2626.jpg",
+    "logo": "2626.png",
     "lat": 41.8781,
-    "lon": -87.6298,
-    "address": "Chicago, IL",
-    "contact": "info@2626consulting.com"
+    "lng": -87.6298,
+    "location": "Chicago, IL",
+    "link": "https://2626consulting.com"
   },
   {
     "name": "Ascend Strategy & Design",
-    "logo": "logos/ascend.jpg",
+    "logo": "ascend.png",
     "lat": 30.8467,
-    "lon": -83.2831,
-    "address": "Valdosta, GA",
-    "contact": "hello@ascend.com"
+    "lng": -83.2831,
+    "location": "Valdosta, GA",
+    "link": "https://ascendstrategy.com"
   }
 ]
