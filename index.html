@@ -38,6 +38,38 @@
       font-size: 16px;
       padding-right: 20px;
     }
+    #agency-key {
+      position: absolute;
+      top: 80px;
+      left: 10px;
+      background: rgba(0, 168, 233, 0.1);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+      max-width: 220px;
+    }
+    .agency-entry {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .agency-entry img {
+      width: 30px;
+      height: auto;
+    }
+    .agency-entry span {
+      font-family: 'Poppins', sans-serif;
+      color: #000;
+    }
+    .bug-logo {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      height: 40px;
+    }
   </style>
 </head>
 <body>
@@ -48,12 +80,16 @@
     </div>
     <div id="est-time"></div>
   </header>
+
+  <div id="agency-key"></div>
   <div id="map"></div>
+  <a href="https://www.conduitdigital.us" target="_blank">
+    <img src="logos/conduit-logo-bug.png" alt="Conduit Bug Logo" class="bug-logo" />
+  </a>
 
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
     const map = L.map('map').setView([39.8283, -98.5795], 4);
-
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://carto.com/attributions">CartoDB</a>'
     }).addTo(map);
@@ -65,7 +101,7 @@
         lat: 41.8781,
         lng: -87.6298,
         location: "Chicago, IL",
-        link: "https://2626consulting.com",
+        link: "https://consulting2626.com",
         timezone: "America/Chicago"
       },
       {
@@ -74,7 +110,7 @@
         lat: 30.8327,
         lng: -83.2785,
         location: "Valdosta, GA",
-        link: "https://ascendstrategy.com",
+        link: "https://ascend.digital",
         timezone: "America/New_York"
       },
       {
@@ -88,7 +124,8 @@
       }
     ];
 
-    agencies.forEach(agency => {
+    const markers = [];
+    agencies.forEach((agency, index) => {
       const icon = L.icon({
         iconUrl: `logos/${agency.logo}`,
         iconSize: [40, 40],
@@ -97,6 +134,7 @@
       });
 
       const marker = L.marker([agency.lat, agency.lng], { icon }).addTo(map);
+      markers.push(marker);
 
       const localTime = new Intl.DateTimeFormat([], {
         hour: '2-digit',
@@ -105,11 +143,11 @@
       }).format(new Date());
 
       const popupHTML = `
-        <div>
+        <div style="text-align:center;font-family:'Poppins',sans-serif;">
           <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" />
           <h3 style="color:#00a8e9;margin-bottom:4px;">${agency.name}</h3>
           <div>${agency.location}</div>
-          <div style="font-size:12px;margin-top:4px;">Time: ${localTime}</div>
+          <div style="font-size:12px;margin-top:4px;">Time (${agency.timezone.split('/')[1]}): ${localTime}</div>
           <div style="margin-top:5px;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
         </div>
       `;
@@ -117,7 +155,20 @@
       marker.bindPopup(popupHTML);
     });
 
-    // Eastern time header clock
+    // Render agency list
+    const keyContainer = document.getElementById('agency-key');
+    agencies.forEach((agency, index) => {
+      const entry = document.createElement('div');
+      entry.className = 'agency-entry';
+      entry.innerHTML = `<img src="logos/${agency.logo}" alt="${agency.name}" /><span>${agency.name}</span>`;
+      entry.addEventListener('click', () => {
+        map.setView([agency.lat, agency.lng], 6);
+        markers[index].openPopup();
+      });
+      keyContainer.appendChild(entry);
+    });
+
+    // Update time
     function updateESTTime() {
       const now = new Date();
       const estTime = new Intl.DateTimeFormat([], {
@@ -127,12 +178,8 @@
       }).format(now);
       document.getElementById("est-time").textContent = `Eastern Time (EST/EDT): ${estTime}`;
     }
-
     updateESTTime();
     setInterval(updateESTTime, 60000);
   </script>
-  <a href="https://www.conduitdigital.us" target="_blank" style="position: absolute; bottom: 20px; left: 20px;">
-    <img src="logos/conduit-bug.png" alt="Conduit Bug Logo" style="height: 40px;" />
-  </a>
 </body>
 </html>
