@@ -1,52 +1,145 @@
-body, html {
+/* Reset and base styling */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   height: 100%;
+  width: 100%;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  background-color: black;
-  color: white;
-}
-
-.header-logo {
-  height: 40px;
-  max-width: 180px;
-  object-fit: contain;
-}
-
-.title-text {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  color: #00a8e9;
-  margin: 0 1rem;
-  white-space: nowrap;
-}
-
-.clock {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  padding-right: 1rem;
-  white-space: nowrap;
+  background-color: #ffffff;
 }
 
 #map {
-  height: calc(100vh - 70px);
+  position: absolute;
+  top: 60px;
+  bottom: 0;
   width: 100%;
+  z-index: 1;
 }
 
-.corner-bug {
+/* Header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000;
+  color: white;
+  height: 60px;
+  z-index: 10;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-animate {
+  height: 36px;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 24px;
+  color: #00a8e9;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.time-display {
+  font-size: 16px;
+  color: #fff;
+  padding-right: 20px;
+}
+
+/* Key container styling */
+#agency-key {
   position: absolute;
-  bottom: 15px;
-  left: 15px;
-  height: 40px;
-  width: auto;
+  top: 80px;
+  left: 10px;
+  background-color: rgba(0, 168, 233, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.agency-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #000;
+  font-size: 14px;
+}
+
+.agency-entry img {
+  height: 24px;
+  width: 24px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Bug logo */
+#conduit-bug {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 50px;
+  height: auto;
+  z-index: 10;
   cursor: pointer;
+}
+
+/* Leaflet popups */
+.leaflet-popup-content {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+.leaflet-popup-content h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00a8e9;
+  margin: 0 0 5px 0;
+}
+
+.leaflet-popup-content img {
+  max-width: 60px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .time-display {
+    font-size: 14px;
+    padding-right: 0;
+  }
+
+  #agency-key {
+    top: auto;
+    bottom: 80px;
+    left: 10px;
+    right: 10px;
+  }
 }
