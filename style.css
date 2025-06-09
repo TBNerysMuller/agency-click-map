@@ -20,30 +20,42 @@ body, html {
   z-index: 1;
 }
 
-/* Header styling */
-header {
+/* HEADER LOGO FIX */
+.logo-animate {
+  height: 40px;
+  max-width: 140px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* HEADER CONTAINER FIX */
+.header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  justify-content: space-between;
   background-color: #000;
-  color: white;
-  height: 60px;
-  z-index: 10;
+  color: #fff;
+  padding: 8px 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.logo-animate {
-  height: 36px;
-  max-width: 140px;
-  object-fit: contain;
-  display: block;
-  flex-shrink: 0;
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00a8e9;
+  white-space: nowrap;
+}
+
+.header-time {
+  font-size: 1rem;
+  padding-left: 12px;
 }
 
 h1 {
