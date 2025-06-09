@@ -1,9 +1,9 @@
 // Initialize the map
 const map = L.map('map').setView([39.8283, -98.5795], 4);
 
-// Add tile layer (base map)
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
+// Add tile layer with custom dark style
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap contributors & CartoDB'
 }).addTo(map);
 
 // Load agency data
@@ -47,13 +47,17 @@ fetch('agencies.json')
     });
   });
 
-// Live EST clock
+// Live EST clock with DST handling
 function updateESTTime() {
   const estTimeElement = document.getElementById('est-time');
   const now = new Date();
-  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-  const est = new Date(utc + 3600000 * -5); // UTC-5 for EST
-  estTimeElement.textContent = `Eastern Time (EST): ${est.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`;
+  const options = {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit'
+  };
+  const formatter = new Intl.DateTimeFormat([], options);
+  estTimeElement.textContent = `Eastern Time (EST/EDT): ${formatter.format(now)}`;
 }
 setInterval(updateESTTime, 1000);
 updateESTTime();
