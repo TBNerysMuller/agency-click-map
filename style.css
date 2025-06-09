@@ -28,7 +28,7 @@ html, body {
 }
 
 #map-header img:hover {
-  opacity: 0.85;
+  opacity: 0.65;
   cursor: pointer;
 
 }
@@ -157,6 +157,6 @@ html, body {
 }
 
 #logo-bug:hover {
-  opacity: 0.85;
+  opacity: 0.65;
   cursor: pointer;
 }
