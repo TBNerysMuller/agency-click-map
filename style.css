@@ -88,6 +88,8 @@ html, body {
   pointer-events: none;
 }
 
+/* Header layout styling */
+/* Header layout */
 #map-header {
   height: 80px;
   background: black;
@@ -98,10 +100,7 @@ html, body {
   border-bottom: 2px solid #00a8e9;
 }
 
-#map-header img {
-  height: 50px;
-}
-
+/* Animate title */
 .map-title {
   font-size: 48px;
   font-weight: 700;
@@ -112,22 +111,42 @@ html, body {
   opacity: 0;
 }
 
+/* Animate Conduit logo */
+.logo-animate {
+  height: 50px;
+  animation: popIn 1.2s ease-in-out forwards;
+  opacity: 0;
+}
+
 @keyframes slideFade {
   0% {
     transform: translateY(-10px);
     opacity: 0;
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Logo bug styling (bottom left) */
 #logo-bug {
   position: absolute;
   bottom: 10px;
-  right: 10px;
-  height: 40px;
-  width: 40px;
+  left: 10px;
+  height: 60px;       /* scaled version of tall image */
+  width: auto;
   z-index: 999;
+  object-fit: contain;
 }
