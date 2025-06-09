@@ -1,10 +1,10 @@
 [
   {
     "name": "Conduit Digital",
-    "location": "New Jersey",
+    "location": "Tom's River, New Jersey",
     "timezone": "Eastern Time (EST)",
-    "lat": 39.9526,
-    "lng": -75.1652,
+    "lat": 39.9634,
+    "lng": -74.1873,
     "logo": "conduit-icon.png",
     "link": "https://conduitdigital.us"
   },
