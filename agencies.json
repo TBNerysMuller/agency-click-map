@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Conduit Digital",
+    "location": "New Jersey",
+    "timezone": "Eastern Time (EST)",
+    "lat": 39.9526,
+    "lng": -75.1652,
+    "logo": "conduit-logo.png",
+    "link": "https://conduitdigital.us"
+  },
+  {
+    "name": "2626 Consulting",
+    "location": "Chicago, Illinois",
+    "timezone": "Central Time (CST)",
+    "lat": 41.8781,
+    "lng": -87.6298,
+    "logo": "2626-consulting.png",
+    "link": "https://example.com"
+  },
+  {
+    "name": "Agency Development Solutions",
+    "location": "Louisville, Kentucky",
+    "timezone": "Eastern Time (EST)",
+    "lat": 38.2527,
+    "lng": -85.7585,
+    "logo": "agency-dev-solutions.png",
+    "link": "https://example.com"
+  },
+  {
+    "name": "Ascend Strategy & Design",
+    "location": "Valdosta, Georgia",
+    "timezone": "Eastern Time (EST)",
+    "lat": 30.8327,
+    "lng": -83.2785,
+    "logo": "ascend-strategy.png",
+    "link": "https://example.com"
+  },
+  {
+    "name": "Bend Marketing",
+    "location": "South Bend, Indiana",
+    "timezone": "Eastern Time (EST)",
+    "lat": 41.6764,
+    "lng": -86.2520,
+    "logo": "bend-marketing.png",
+    "link": "https://example.com"
+  }
+  // ... additional agencies go here
+]
