@@ -61,12 +61,6 @@
 
           const marker = L.marker([a.lat, a.lon], { icon }).addTo(map);
 
-          marker.bindTooltip(a.name, {
-            permanent: true,
-            direction: 'bottom',
-            className: 'marker-label'
-          }).openTooltip();
-
           marker.bindPopup(`
             <div class="popup-content">
               <img src="${a.logo}" alt="${a.name} logo" />
