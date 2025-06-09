@@ -51,11 +51,11 @@
           const marker = L.marker([a.lat, a.lng], { icon }).addTo(map);
 
           marker.bindPopup(`
-              <div class="popup-content" style="text-align: center; font-family: 'Poppins', sans-serif;">
-              <img src="logos/${a.logo}" alt="${a.name} Logo" style="width: 60px; height: 60px; object-fit: contain;" />
-              <h3 style="margin: 0.5em 0; color: black;">${a.name}</h3>
-              <p style="margin: 0; color: black;">${a.location}</p>
-              <p><a href="${a.link}" target="_blank">Website</a></p>
+            <div class="popup-content" style="font-family: 'Poppins', sans-serif; text-align: center;">
+              <img src="logos/${a.logo}" alt="${a.name} Logo" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 8px;" />
+              <h3 style="margin: 0.3em 0; color: #00a8e9; font-size: 16px;">${a.name}</h3>
+              <p style="margin: 0; font-size: 13px; color: black;">${a.location}</p>
+              <p style="margin-top: 4px;"><a href="${a.link}" target="_blank" style="color: #00a8e9;">Website</a></p>
             </div>
           `);
 
