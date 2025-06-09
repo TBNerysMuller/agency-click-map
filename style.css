@@ -142,10 +142,10 @@ html, body {
 /* Logo bug styling (bottom left) */
 #logo-bug {
   position: fixed;          /* ensures it stays in bottom-left of viewport */
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   height: auto;
-  max-height: 100px;        /* controls vertical size */
+  max-height: 65px;        /* controls vertical size */
   width: auto;
   z-index: 999;
   object-fit: contain;
