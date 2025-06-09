@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agency Click Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([39.8283, -98.5795], 4);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; CartoDB',
+    }).addTo(map);
+
+    fetch('agencies.json')
+      .then(res => res.json())
+      .then(agencies => {
+        agencies.forEach(a => {
+          const icon = L.icon({
+            iconUrl: a.logo,
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+            popupAnchor: [0, -40]
+          });
+
+          const marker = L.marker([a.lat, a.lon], { icon }).addTo(map);
+
+          marker.bindTooltip(a.name, {
+            permanent: true,
+            direction: 'bottom',
+            className: 'marker-label'
+          }).openTooltip();
+
+          marker.bindPopup(`
+            <div class="popup-content">
+              <img src="${a.logo}" alt="${a.name} logo" />
+              <h3>${a.name}</h3>
+              <p>${a.address}<br/>
+              <a href="mailto:${a.contact}">${a.contact}</a></p>
+            </div>
+          `);
+        });
+      });
+  </script>
+</body>
+</html>
