@@ -4,32 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css?v=1.4" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet -->
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 <body>
+  <!-- Header -->
   <div id="map-header">
     <div class="logo-title-wrapper">
       <a href="https://conduitdigital.us" target="_blank">
         <img src="logos/conduit-logo.png" alt="Conduit Digital" class="logo-animate" />
       </a>
-      <h1 class=>Agency Partner Map</h1>
+      <h1 class="title">Agency Partner Map</h1>
     </div>
     <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--</div>
   </div>
 
+  <!-- Key Panel -->
   <div id="agency-key"></div>
 
+  <!-- Map -->
   <div id="map"></div>
 
+  <!-- Bottom-left Bug Logo -->
   <a href="https://conduitdigital.us" target="_blank">
     <img src="logos/conduit-logo-bug.png" class="logo-bug" alt="Conduit Bug Logo" />
   </a>
 
-  <script src="script.js"></script>
+  <!-- Script -->
+  <script src="script.js?v=1.4"></script>
 </body>
 </html>
