@@ -5,7 +5,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 39.9526,
     "lng": -75.1652,
-    "logo": "conduit-logo.png",
+    "logo": "conduit-icon.png",
     "link": "https://conduitdigital.us"
   },
   {
@@ -14,8 +14,8 @@
     "timezone": "Central Time (CST)",
     "lat": 41.8781,
     "lng": -87.6298,
-    "logo": "2626-consulting.png",
-    "link": "https://example.com"
+    "logo": "2626.png",
+    "link": "https://www.consult2626.com"
   },
   {
     "name": "Agency Development Solutions",
@@ -23,7 +23,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 38.2527,
     "lng": -85.7585,
-    "logo": "agency-dev-solutions.png",
+    "logo": "agency-dev.png",
     "link": "https://example.com"
   },
   {
@@ -32,8 +32,8 @@
     "timezone": "Eastern Time (EST)",
     "lat": 30.8327,
     "lng": -83.2785,
-    "logo": "ascend-strategy.png",
-    "link": "https://example.com"
+    "logo": "ascend.png",
+    "link": "https://ascend.digital"
   },
   {
     "name": "Bend Marketing",
@@ -41,7 +41,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 41.6764,
     "lng": -86.2520,
-    "logo": "bend-marketing.png",
-    "link": "https://example.com"
+    "logo": "bend.png",
+    "link": "https://bendyourmarketing.com"
   }
 ]
