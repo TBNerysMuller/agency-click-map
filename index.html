@@ -17,7 +17,7 @@
       </a>
     </div>
     <div class="header-right">
-      <h1 class="map-title">AGENCY PARTNER MAP</h1>
+      <h1 class="map-title">Agency Partner Map</h1>
     </div>
   </header>
 
@@ -51,7 +51,7 @@
           const marker = L.marker([a.lat, a.lng], { icon }).addTo(map);
 
           marker.bindPopup(`
-            <div class="popup-content" style="text-align: center;">
+              <div class="popup-content" style="text-align: center; font-family: 'Poppins', sans-serif;">
               <img src="logos/${a.logo}" alt="${a.name} Logo" style="width: 60px; height: 60px; object-fit: contain;" />
               <h3 style="margin: 0.5em 0; color: black;">${a.name}</h3>
               <p style="margin: 0; color: black;">${a.location}</p>
