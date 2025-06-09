@@ -141,13 +141,13 @@ html, body {
 
 #agency-key {
   position: fixed;
-  top: 100px; /* lower than the header, but still visible */
+  top: 110px;               /* moved down to clear + / - */
   left: 20px;
-  width: 280px;
-  max-height: 80vh;
+  width: 240px;             /* slightly narrower */
+  max-height: 70vh;         /* smaller overall */
   overflow-y: auto;
-  background-color: rgba(0, 168, 233, 0.35); /* darker translucent blue */
-  padding: 15px;
+  background-color: rgba(0, 168, 233, 0.35);
+  padding: 12px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 168, 233, 0.3);
   z-index: 1000;
