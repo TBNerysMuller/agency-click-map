@@ -29,8 +29,8 @@ body, html {
 }
 
 .logo-animate {
-  height: 44px;           /* 🔹 Slightly less than 48px — perfect balance */
-  max-width: 200px;       /* 🔹 Slightly roomier for horizontal logos */
+  height: 56px;          
+  max-width: 240px;       
   object-fit: contain;
   display: block;
   flex-shrink: 0;
