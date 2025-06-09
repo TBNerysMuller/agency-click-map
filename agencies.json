@@ -5,7 +5,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 39.9526,
     "lng": -74.1652,
-    "logo": "conduit.png",
+    "logo": "logos/conduit.png",
     "link": "https://conduitdigital.us"
   },
   {
@@ -14,7 +14,7 @@
     "timezone": "Central Time (CST)",
     "lat": 41.8781,
     "lng": -87.6298,
-    "logo": "2626.png",
+    "logo": "logos/2626.png",
     "link": "https://consulting2626.com"
   },
   {
@@ -23,7 +23,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 38.2527,
     "lng": -85.7585,
-    "logo": "agency-dev.png",
+    "logo": "logos/agency-dev.png",
     "link": "https://example.com"
   },
   {
@@ -32,7 +32,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 30.8327,
     "lng": -83.2785,
-    "logo": "ascend.png",
+    "logo": "logos/ascend.png",
     "link": "https://ascend.digital"
   },
   {
@@ -41,7 +41,7 @@
     "timezone": "Eastern Time (EST)",
     "lat": 41.6764,
     "lng": -86.2520,
-    "logo": "bend.png",
+    "logo": "logos/bend.png",
     "link": "https://bendyourmarketing.com"
   }
 ]
