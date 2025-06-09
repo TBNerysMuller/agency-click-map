@@ -4,44 +4,132 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
-
-  <!-- Poppins Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.7" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    header {
+      background: #000;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+      color: #00a8e9;
+    }
+    .logo {
+      height: 40px;
+    }
+    #est-time {
+      font-size: 16px;
+      padding-right: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header id="map-header">
-    <div class="logo-title-wrapper">
-      <img src="logos/conduit-logo.png" alt="Conduit Logo" class="logo-animate" />
-      <h1 class="map-title">Agency Partner Map</h1>
+  <header>
+    <div style="display:flex; align-items:center; gap:10px;">
+      <a href="https://www.conduitdigital.us" target="_blank"><img src="logos/conduit.png" alt="Conduit Logo" class="logo" /></a>
+      <h1>Agency Partner Map</h1>
     </div>
-    <div id="est-time" class="est-time-bar">Eastern Time (EST): --:--</div>
+    <div id="est-time"></div>
   </header>
-
-  <!-- Mobile Dropdown Button -->
-  <button class="agency-key-toggle" onclick="document.getElementById('agency-key').classList.toggle('show')">
-    Agencies
-  </button>
-
-  <!-- Map -->
   <div id="map"></div>
 
-  <!-- Agency Key List -->
-  <div id="agency-key"></div>
-
-  <!-- Conduit Bug Logo -->
-  <img src="logos/conduit-logo-bug.png" alt="Conduit Bug Logo" class="logo-bug" />
-
-  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([39.8283, -98.5795], 4);
 
-  <!-- Custom Script -->
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/@kngai/leaflet.timezones@latest/dist/leaflet.timezones.min.js"></script>
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://carto.com/attributions">CartoDB</a>'
+    }).addTo(map);
+
+    const agencies = [
+      {
+        name: "2626 Consulting",
+        logo: "2626.png",
+        lat: 41.8781,
+        lng: -87.6298,
+        location: "Chicago, IL",
+        link: "https://2626consulting.com",
+        timezone: "America/Chicago"
+      },
+      {
+        name: "Ascend Strategy & Design",
+        logo: "ascend.png",
+        lat: 30.8327,
+        lng: -83.2785,
+        location: "Valdosta, GA",
+        link: "https://ascendstrategy.com",
+        timezone: "America/New_York"
+      },
+      {
+        name: "Conduit Digital",
+        logo: "conduit.png",
+        lat: 39.4537,
+        lng: -74.7276,
+        location: "New Jersey, USA",
+        link: "https://www.conduitdigital.us",
+        timezone: "America/New_York"
+      }
+    ];
+
+    agencies.forEach(agency => {
+      const icon = L.icon({
+        iconUrl: `logos/${agency.logo}`,
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -40]
+      });
+
+      const marker = L.marker([agency.lat, agency.lng], { icon }).addTo(map);
+
+      const localTime = new Intl.DateTimeFormat([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: agency.timezone
+      }).format(new Date());
+
+      const popupHTML = `
+        <div>
+          <img src="logos/${agency.logo}" alt="${agency.name}" style="width:50px;height:auto;margin-bottom:5px;" />
+          <h3 style="color:#00a8e9;margin-bottom:4px;">${agency.name}</h3>
+          <div>${agency.location}</div>
+          <div style="font-size:12px;margin-top:4px;">Time: ${localTime}</div>
+          <div style="margin-top:5px;"><a href="${agency.link}" target="_blank">Visit Website</a></div>
+        </div>
+      `;
+
+      marker.bindPopup(popupHTML);
+    });
+
+    // Eastern time header clock
+    function updateESTTime() {
+      const now = new Date();
+      const estTime = new Intl.DateTimeFormat([], {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'America/New_York'
+      }).format(now);
+      document.getElementById("est-time").textContent = `Eastern Time (EST/EDT): ${estTime}`;
+    }
+
+    updateESTTime();
+    setInterval(updateESTTime, 60000);
+  </script>
 </body>
 </html>
