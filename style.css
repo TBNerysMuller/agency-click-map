@@ -1,182 +1,166 @@
 /* General Reset */
-body, html {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+body, html {
   height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
 }
 
-/* Map container */
 #map {
-  position: absolute;
-  top: 80px; /* ensure it's not hidden under header */
-  bottom: 0;
+  height: 100vh;
   width: 100%;
   z-index: 1;
-  background-color: #fff;
 }
 
 /* Header */
 #map-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
   background-color: #000;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
-  z-index: 999;
+  padding: 10px 16px;
+  height: 60px;
+  position: relative;
+  z-index: 1000;
 }
 
 .logo-title-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 
-.logo-title-wrapper img.logo-animate {
-  height: 48px;
-  width: auto;
+.logo-animate {
+  height: 38px;
+  max-width: 180px;
   object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
-.map-title {
-  font-size: 32px;
+#map-title {
+  font-size: 22px;
   font-weight: 700;
   color: #00a8e9;
-  margin: 0;
   white-space: nowrap;
 }
 
-/* Eastern Time Bar */
 .est-time-bar {
-  color: #fff;
-  font-size: 18px;
-  padding-right: 12px;
+  font-size: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
   white-space: nowrap;
 }
 
-/* Bug Logo */
-.logo-bug {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 60px;
-  height: auto;
-  z-index: 999;
-}
-
-/* Agency Key */
+/* Key Container */
 #agency-key {
-  position: fixed;
-  top: 100px;
-  left: 20px;
-  background: rgba(0, 168, 233, 0.15);
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 6px;
   padding: 12px;
-  border-radius: 8px;
-  max-height: 70vh;
-  overflow-y: auto;
-  z-index: 999;
-  width: 220px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1001;
+  max-width: 240px;
 }
 
-.agency-entry {
+.key-entry {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 10px;
-  cursor: pointer;
+  margin-bottom: 8px;
 }
 
-.agency-entry img {
-  height: 24px;
-  width: 24px;
+.key-entry img {
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
-.agency-entry span {
-  font-size: 14px;
-  color: #000;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Leaflet Popup Styling */
-.leaflet-popup-content-wrapper {
-  font-family: 'Poppins', sans-serif;
-}
-
+/* Map Marker Popup */
 .leaflet-popup-content {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
 }
 
 .leaflet-popup-content h3 {
-  margin: 4px 0;
+  margin-bottom: 4px;
+  font-size: 14px;
   color: #00a8e9;
-  font-size: 18px;
   font-weight: 700;
 }
 
-.leaflet-popup-content p {
-  margin: 2px 0;
-  font-size: 14px;
+/* Footer Bug Logo */
+.logo-bug {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 48px;
+  height: auto;
+  z-index: 1000;
 }
 
-#agency-toggle {
-  display: none; /* Default hidden */
+/* Mobile Key Toggle */
+#toggle-key {
+  display: none;
+}
 
-/* Responsive styles */
 @media (max-width: 768px) {
-  #map-header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  #agency-toggle {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #00a8e9;
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    z-index: 1000;
-    font-size: 14px;
-
-  .logo-title-wrapper h1 {
-    font-size: 20px;
+  #map-title {
+    font-size: 16px;
   }
 
   .est-time-bar {
-    font-size: 14px;
-    padding-right: 6px;
-  }
-
-  .logo-title-wrapper img.logo-animate {
-    height: 36px;
-  }
-
-  .logo-bug {
-    width: 40px;
-    bottom: 16px;
-    left: 16px;
+    font-size: 13px;
+    padding-right: 12px;
   }
 
   #agency-key {
     display: none;
+    position: absolute;
+    top: 64px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 6px;
+    padding: 10px;
+    max-height: 60vh;
+    overflow-y: auto;
   }
 
-  #agency-key.active {
+  #toggle-key {
     display: block;
+    position: absolute;
+    top: 70px;
+    right: 16px;
+    background-color: #00a8e9;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 1002;
   }
 
-  .logo-title-wrapper h1 {
-    font-size: 18px;
-    white-space: nowrap;
+  .key-entry img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .logo-animate {
+    height: 30px;
+  }
+
+  .logo-bug {
+    width: 40px;
   }
 }
