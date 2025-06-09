@@ -2,24 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
   <header class="header">
-    <a href="https://www.conduitdigital.us" target="_blank">
-      <img src="logos/conduit-logo.png" alt="Conduit Logo" class="header-logo" />
-    </a>
-    <h1 class="title-text">Agency Partner Map</h1>
-    <div class="clock" id="clock">Eastern Time (EST/EDT): --:--</div>
+    <div class="logo-container">
+      <a href="https://www.conduitdigital.us" target="_blank">
+        <img src="logos/conduit-logo.png" alt="Conduit Logo" class="logo" />
+      </a>
+      <h1 class="title">Agency Partner Map</h1>
+    </div>
+    <div class="time" id="eastern-time"></div>
   </header>
+
   <div id="map"></div>
-  <img src="logos/conduit-logo-bug.png" alt="Conduit Bug Logo" class="corner-bug" onclick="window.open('https://www.conduitdigital.us', '_blank')" />
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/moment/min/moment.min.js"></script>
-  <script src="https://unpkg.com/moment-timezone/builds/moment-timezone-with-data.min.js"></script>
-  <script src="script.js"></script>
+
+  <script>
+    const map = L.map('map').setView([39.8283, -98.5795], 4);
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    window.addEventListener('load', function () {
+      setTimeout(() => {
+        map.invalidateSize();
+      }, 100);
+    });
+
+    // Set Eastern time
+    function updateEasternTime() {
+      const options = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: true };
+      const formatter = new Intl.DateTimeFormat([], options);
+      document.getElementById('eastern-time').textContent = `Eastern Time (EST/EDT): ${formatter.format(new Date())}`;
+    }
+    updateEasternTime();
+    setInterval(updateEasternTime, 60000);
+  </script>
 </body>
 </html>
