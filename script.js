@@ -13,6 +13,12 @@ if (L.timezones) {
   console.warn('Leaflet.timezones plugin not found');
 }
 
+// Make both conduit logos clickable
+const headerLogo = document.getElementById('header-logo');
+const bugLogo = document.getElementById('bug-logo');
+if (headerLogo) headerLogo.onclick = () => window.open('https://www.conduitdigital.us', '_blank');
+if (bugLogo) bugLogo.onclick = () => window.open('https://www.conduitdigital.us', '_blank');
+
 function getLiveTimeInZone(timeZone) {
   const now = new Date();
   const options = {
