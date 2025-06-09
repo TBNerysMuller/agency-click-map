@@ -22,9 +22,9 @@ body, html {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  padding: 0 24px;
+  padding: 0 20px;
   background: black;
-  z-index: 1001;
+  overflow: hidden;  /* Ensures overflowing parts get clipped */
 }
 
 .map-title {
@@ -39,7 +39,7 @@ body, html {
 
 .logo-animate {
   height: 48px;     /* Match the map-title's font-size visually */
-  max-width: 240px;
+  max-width: 200px;
   object-fit: contain;
   display: block;
   opacity: 1;
