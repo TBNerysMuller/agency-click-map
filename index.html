@@ -24,11 +24,24 @@
       </a>
       <h1 class="title">Agency Partner Map</h1>
     </div>
-    <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--</div>
+    <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--:--</div>
   </div>
 
   <!-- Key Panel -->
-  <div id="agency-key"></div>
+  <div id="agency-key" class="key-panel">
+    <div class="key-item">
+      <img src="logos/2626.png" class="key-icon" alt="2626 Logo" />
+      <span>2626 Consulting</span>
+    </div>
+    <div class="key-item">
+      <img src="logos/ascend.png" class="key-icon" alt="Ascend Logo" />
+      <span>Ascend Strategy & Design</span>
+    </div>
+    <div class="key-item">
+      <img src="logos/conduit.png" class="key-icon" alt="Conduit Logo" />
+      <span>Conduit Digital</span>
+    </div>
+  </div>
 
   <!-- Map -->
   <div id="map"></div>
@@ -38,7 +51,88 @@
     <img src="logos/conduit-logo-bug.png" class="logo-bug" alt="Conduit Bug Logo" />
   </a>
 
-  <!-- Script -->
-  <script src="script.js?v=1.4"></script>
+  <!-- Inline JS -->
+  <script>
+    // Initialize map
+    var map = L.map('map').setView([39.8283, -98.5795], 4);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Update EST with seconds
+    function updateEasternTime() {
+      const estTime = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/New_York',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      document.getElementById('est-time').textContent = `Eastern Time (EST): ${estTime}`;
+    }
+    updateEasternTime();
+    setInterval(updateEasternTime, 1000);
+
+    // Custom markers
+    const agencies = [
+      {
+        name: "2626 Consulting",
+        location: [41.8781, -87.6298], // Chicago, IL
+        city: "Chicago, IL",
+        logo: "logos/2626.png",
+        url: "https://2626consulting.com",
+        tz: "America/Chicago"
+      },
+      {
+        name: "Ascend Strategy & Design",
+        location: [30.8327, -83.2785], // Valdosta, GA
+        city: "Valdosta, GA",
+        logo: "logos/ascend.png",
+        url: "https://ascendatd.com",
+        tz: "America/New_York"
+      },
+      {
+        name: "Conduit Digital",
+        location: [39.4314, -74.5244], // NJ
+        city: "New Jersey, USA",
+        logo: "logos/conduit.png",
+        url: "https://conduitdigital.us",
+        tz: "America/New_York"
+      }
+    ];
+
+    agencies.forEach(agency => {
+      const icon = L.icon({
+        iconUrl: agency.logo,
+        iconSize: [40, 40],
+        iconAnchor: [20, 20],
+        popupAnchor: [0, -20]
+      });
+
+      const marker = L.marker(agency.location, { icon: icon }).addTo(map);
+      const now = new Date().toLocaleTimeString('en-US', {
+        timeZone: agency.tz,
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+
+      const popup = `
+        <div class="popup">
+          <img src="${agency.logo}" class="popup-logo" />
+          <div class="popup-content">
+            <h3>${agency.name}</h3>
+            <p>${agency.city}</p>
+            <p>Time: ${now}</p>
+            <a href="${agency.url}" target="_blank">Visit Website</a>
+          </div>
+        </div>
+      `;
+      marker.bindPopup(popup);
+    });
+  </script>
 </body>
 </html>
