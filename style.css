@@ -17,13 +17,18 @@ html, body {
 }
 
 #map-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 80px;
   background: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  border-bottom: 4px solid #00a8e9;
+  border-bottom: 2px solid #00a8e9;
+  z-index: 1001;
 }
 
 #map-header img {
