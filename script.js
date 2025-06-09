@@ -1,6 +1,14 @@
 // Initialize the map
 const map = L.map('map').setView([39.8283, -98.5795], 4);
 
+// ✅ Add timezone overlay
+L.timezones.addTo(map);
+
+// Optional: show timezone name on click
+L.timezones
+  .bindPopup(layer => layer.feature.properties.time_zone)
+  .addTo(map);
+
 // Add tile layer using CartoDB Positron (free version)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://carto.com/">CartoDB</a> & contributors'
