@@ -58,5 +58,5 @@ html, body {
   pointer-events: none;
 }
 .leaflet-tile {
-  filter: hue-rotate(180deg) saturate(200%) brightness(70%);
+  filter: brightness(0) saturate(100%) invert(54%) sepia(60%) saturate(4083%) hue-rotate(165deg) brightness(98%) contrast(101%);;
 }
