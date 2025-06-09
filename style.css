@@ -3,7 +3,7 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  background-color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -111,10 +111,10 @@ h1, h2, h3, h4, h5, h6 {
 /* ====== EST TIME BAR ====== */
 .est-time-bar {
   color: white;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
-  padding: 8px 16px;
+  padding: 12px 24px;
   margin-left: auto;
   white-space: nowrap;
 }
@@ -162,5 +162,6 @@ h1, h2, h3, h4, h5, h6 {
 
   .est-time-bar {
     font-size: 20px;
+    padding: 8px 16px;
   }
 }
