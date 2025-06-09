@@ -9,17 +9,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- HEADER -->
   <header id="map-header">
-  <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
-  <img src="logos/Conduit.png" alt="Conduit Logo" />
-</a>
-  <h1 class="map-title">Agency Partner Map</h1>
-</header>
+    <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
+      <img src="logos/Conduit.png" alt="Conduit Logo"
+    </a>
+    <h1 class="map-title">Agency Partner Map</h1>
+  </header>
+
+  <!-- SIDEBAR KEY -->
   <div id="agency-key"></div>
 
+  <!-- MAP -->
   <div id="map"></div>
 
+  <!-- LOGO BUG IN BOTTOM LEFT -->
+  <a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
+    <img src="logos/conduit_bug.png" alt="Conduit Logo Bug" id="logo-bug" />
+  </a>
+
+  <!-- LEAFLET JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- MAP SCRIPT -->
   <script>
     const map = L.map('map').setView([39.8283, -98.5795], 4);
 
@@ -31,6 +44,9 @@
     fetch('agencies.json')
       .then(res => res.json())
       .then(agencies => {
+        const markers = {};
+        const keyContainer = document.getElementById('agency-key');
+
         agencies.forEach(a => {
           const icon = L.icon({
             iconUrl: a.logo,
@@ -55,11 +71,24 @@
               <p><a href="mailto:${a.contact}">${a.contact}</a></p>
             </div>
           `);
+
+          markers[a.name] = marker;
+
+          // Add to sidebar key
+          const entry = document.createElement('div');
+          entry.className = 'agency-entry';
+          entry.innerHTML = `
+            <img src="${a.logo}" alt="${a.name} logo" />
+            <span>${a.name}</span>
+          `;
+          entry.addEventListener('click', () => {
+            map.setView([a.lat, a.lon], 6);
+            marker.openPopup();
+          });
+
+          keyContainer.appendChild(entry);
         });
       });
   </script>
-<a href="https://www.conduitdigital.us" target="_blank" rel="noopener noreferrer">
-  <img src="logos/conduit_bug.png" alt="Conduit Logo Bug" id="logo-bug" />
-</a>
 </body>
 </html>
