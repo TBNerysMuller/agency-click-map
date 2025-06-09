@@ -44,11 +44,12 @@ body, html {
 }
 
 .logo-animate {
-  height: 60px;       /* increase from 40px */
-  max-width: 200px;
+  height: 200px;
+  max-width: auto;
   object-fit: contain;
   display: block;
   opacity: 1;
+}
 }
 
 .header-left {
