@@ -1,0 +1,174 @@
+/* === GLOBAL === */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+}
+
+#map {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  z-index: 0;
+}
+
+/* === HEADER === */
+#map-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  border-bottom: 2px solid #00a8e9;
+  z-index: 1001;
+}
+
+.map-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #00a8e9;
+  margin: 0;
+  white-space: nowrap;
+  opacity: 1 !important;
+  text-align: right;
+  animation: none !important;
+}
+
+.logo-animate {
+  height: 40px;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+  opacity: 1;
+}
+
+.header-left {
+  flex-shrink: 0;
+}
+
+.header-right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* === SIDEBAR KEY === */
+#agency-key {
+  position: fixed;
+  top: 110px;
+  left: 20px;
+  width: 240px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: rgba(0, 168, 233, 0.35);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 168, 233, 0.3);
+  z-index: 1000;
+}
+
+.agency-entry {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.agency-entry:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.agency-entry img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+.agency-entry span {
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* === TOGGLE BUTTON (Mobile) === */
+#toggle-key {
+  display: none;
+}
+
+/* === CONDUIT LOGO BUG === */
+#logo-bug {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 50px;
+  height: auto;
+  z-index: 999;
+}
+
+/* === MOBILE RESPONSIVENESS === */
+@media (max-width: 768px) {
+  .map-title {
+    font-size: 18px;
+    opacity: 1 !important;
+  }
+
+  .logo-animate {
+    height: 32px;
+    max-width: 120px;
+  }
+
+  #map-header {
+    padding: 0 12px;
+  }
+
+  #agency-key {
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    background-color: rgba(0, 168, 233, 0.95);
+    display: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+    z-index: 1001;
+  }
+
+  #toggle-key {
+    display: block;
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    z-index: 1002;
+    background-color: #00a8e9;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  #logo-bug {
+    width: 40px;
+  }
+}
