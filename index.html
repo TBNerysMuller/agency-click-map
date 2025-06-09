@@ -5,54 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
 
-  <!-- Fonts & Styles -->
-  <link rel="stylesheet" href="style.css?v=1.7" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=1.8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Leaflet CSS -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
-  />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
-  <!-- Header -->
   <div id="map-header">
     <div class="logo-title-wrapper">
       <a href="https://conduitdigital.us" target="_blank">
-        <img src="logos/conduit-logo.png" alt="Conduit Logo" class="header-logo" />
+        <img src="logos/conduit-logo.png" alt="Conduit Digital" class="logo-animate" />
       </a>
       <h1 class="map-title">Agency Partner Map</h1>
     </div>
     <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--:--</div>
   </div>
 
-  <!-- Key Panel (populated by script) -->
-  <div id="agency-key" class="collapsed-key">
-    <button id="toggle-key">Agencies</button>
-    <div id="agency-list"></div>
-  </div>
+  <!-- Agency dropdown button for mobile -->
+  <button id="agency-toggle">Agencies</button>
 
-  <!-- Map Container -->
+  <!-- Map and Key -->
   <div id="map"></div>
+  <div id="agency-key"></div>
 
-  <!-- Footer Logo Bug -->
+  <!-- Conduit bug logo link -->
   <a href="https://conduitdigital.us" target="_blank">
-    <img src="logos/conduit-logo-bug.png" alt="Conduit Bug Logo" class="logo-bug" />
+    <img src="logos/conduit-logo-bug.png" class="logo-bug" alt="Conduit Bug Logo" />
   </a>
 
-  <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-nMMMyCLBd5WYtZ+ZG0zzNQhUpGI7DgG8sXG8Phm0wSYUG9XcV5nVxM9D+2bF06JpYexgl1JZdy5dOhF0N5X5Ug=="
-    crossorigin=""
-  ></script>
-
-  <!-- Custom Script -->
-  <script src="script.js?v=1.7"></script>
+  <!-- Scripts -->
+  <script src="script.js?v=1.8"></script>
 </body>
 </html>
+
