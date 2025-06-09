@@ -23,12 +23,15 @@ h1, h2, h3, h4, h5, h6 {
   padding: 12px 24px;
   background-color: #000;
   z-index: 1000;
+  flex-wrap: nowrap;
+  gap: 24px;
 }
 
 .logo-title-wrapper {
   display: flex;
   align-items: center;
   gap: 16px;
+  white-space: nowrap;
 }
 
 .logo-animate {
@@ -44,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #00a8e9;
   font-weight: 700;
   margin: 0;
+  white-space: nowrap;
 }
 
 /* ====== MAP ====== */
@@ -112,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Poppins', sans-serif;
   padding: 8px 16px;
   margin-left: auto;
+  white-space: nowrap;
 }
 
 /* ====== BUG LOGO ====== */
