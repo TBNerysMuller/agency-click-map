@@ -15,8 +15,7 @@
   <script>
     const map = L.map('map').setView([39.8283, -98.5795], 4);
 
-    // Using Stadia Maps' dark theme with stylized land tones (closest to Conduit Blue)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; CartoDB',
   maxZoom: 20
     }).addTo(map);
