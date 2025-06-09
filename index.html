@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="logos/conduit-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
-
 <body>
-  <header class="header">
-    <div class="header-left">
-      <a href="https://www.conduitdigital.us" target="_blank">
-        <img src="logos/conduit-icon.png" alt="Conduit Logo" class="logo-icon" />
-        <img src="logos/conduit-logo.png" alt="Conduit Text Logo" class="logo-text" />
-      </a>
-      <h1 class="title">Agency Partner Map</h1>
-    </div>
-    <div class="header-right">
-      <span id="easternTime"></span>
-      <button class="dropdown-toggle" id="agencyToggle">Agencies</button>
-    </div>
+  <header class="site-header">
+    <a href="https://www.conduitdigital.us" class="logo-link">
+      <img src="conduit-logo.png" alt="Conduit Logo" class="logo" />
+    </a>
+    <h1 class="map-title">Agency Partner Map</h1>
+    <div class="clock" id="eastern-time"></div>
+    <button id="toggleKey" class="key-toggle">Agencies</button>
   </header>
+
+  <div id="agency-key" class="agency-key">
+    <div class="agency-item" onclick="focusMarker('2626 Consulting')">
+      <img src="logos/2626.png" alt="2626 Consulting" />
+      <span>2626 Consulting</span>
+    </div>
+    <div class="agency-item" onclick="focusMarker('Ascend Strategy & Design')">
+      <img src="logos/ascend.png" alt="Ascend Strategy & Design" />
+      <span>Ascend Strategy & Design</span>
+    </div>
+    <div class="agency-item" onclick="focusMarker('Conduit Digital')">
+      <img src="conduit.png" alt="Conduit Digital" />
+      <span>Conduit Digital</span>
+    </div>
+  </div>
 
   <div id="map"></div>
 
-  <div class="agency-key" id="agencyKey">
-    <ul>
-      <li onclick="flyToAgency('2626 Consulting')">
-        <img src="logos/2626.png" alt="2626 Logo" class="agency-icon" />
-        2626 Consulting
-      </li>
-      <li onclick="flyToAgency('Ascend Strategy & Design')">
-        <img src="logos/ascend.png" alt="Ascend Logo" class="agency-icon" />
-        Ascend Strategy & Design
-      </li>
-      <li onclick="flyToAgency('Conduit Digital')">
-        <img src="logos/conduit.png" alt="Conduit Logo" class="agency-icon" />
-        Conduit Digital
-      </li>
-    </ul>
-  </div>
-
-  <a href="https://www.conduitdigital.us" target="_blank">
-    <img src="logos/conduit-logo-bug.png" class="bug-logo" alt="Conduit Bug Logo" />
+  <a href="https://www.conduitdigital.us" class="logo-bug-link">
+    <img src="conduit-logo-bug.png" alt="Conduit Bug Logo" class="logo-bug" />
   </a>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/moment@2.29.1/moment.js"></script>
-  <script src="https://unpkg.com/moment-timezone@0.5.33/builds/moment-timezone-with-data.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>
