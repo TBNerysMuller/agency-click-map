@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-// Helper: Get formatted time string
+// Helper: Get live formatted time string
 function getLiveTime(tz) {
   return new Date().toLocaleTimeString('en-US', {
     timeZone: tz,
@@ -19,20 +19,32 @@ function getLiveTime(tz) {
   });
 }
 
-// Helper: Generate popup HTML content
+// Helper: Get abbreviated timezone name (e.g. EST)
+function getTimeZoneAbbreviation(tz) {
+  const now = new Date();
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: tz,
+    timeZoneName: 'short'
+  }).formatToParts(now).find(part => part.type === 'timeZoneName').value;
+}
+
+// Helper: Generate popup HTML
 function generatePopupContent(agency) {
+  const time = getLiveTime(agency.timezone);
+  const tzAbbr = getTimeZoneAbbreviation(agency.timezone);
+
   return `
     <div style="text-align:center">
       <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
       <h3>${agency.name}</h3>
       <div>${agency.city}, ${agency.state}</div>
-      <div>Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
+      <div>Time: ${time} (${tzAbbr})</div>
       <a href="${agency.website}" target="_blank">Visit Website</a>
     </div>
   `;
 }
 
-// Fetch and render agency markers
+// Fetch and render agencies
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
@@ -49,7 +61,7 @@ fetch('agencies.json')
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
       marker.bindPopup(generatePopupContent(agency));
 
-      // Update popup every second while open
+      // Update popup content dynamically while open
       marker.on('popupopen', () => {
         marker._popupInterval = setInterval(() => {
           const popup = marker.getPopup();
@@ -61,19 +73,31 @@ fetch('agencies.json')
         clearInterval(marker._popupInterval);
       });
 
-      // Render agency key and click to focus
+      // Zoom and center map on marker click
+      marker.on('click', () => {
+        map.setView(agency.coordinates, 6, {
+          animate: true,
+          duration: 0.5
+        });
+        marker.openPopup();
+      });
+
+      // Add to agency key with click-to-focus
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
       keyItem.addEventListener('click', () => {
-        map.setView(agency.coordinates, 6);
+        map.setView(agency.coordinates, 6, {
+          animate: true,
+          duration: 0.5
+        });
         marker.openPopup();
       });
       keyContainer.appendChild(keyItem);
     });
   });
 
-// Eastern Time Clock (Header)
+// Eastern Time Header Clock
 function updateEasternClock() {
   const estClock = document.getElementById('est-time');
   const now = new Date().toLocaleTimeString('en-US', {
