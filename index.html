@@ -5,41 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agency Partner Map</title>
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css?v=1.7" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
+
 <body>
   <div id="map-header">
     <div class="logo-title-wrapper">
       <a href="https://conduitdigital.us" target="_blank">
         <img src="logos/conduit-logo.png" alt="Conduit Digital" class="logo-animate" />
       </a>
-      <h1 class="map-title">Agency Partner Map</h1>
+      <h1 id="map-title">Agency Partner Map</h1>
     </div>
     <div class="est-time-bar" id="est-time">Eastern Time (EST): --:--:--</div>
   </div>
 
-  <!-- Agency dropdown button for mobile -->
-  <button id="agency-toggle">Agencies</button>
+  <button id="toggle-key">Agencies</button> <!-- Will be hidden in desktop view -->
 
-  <!-- Map and Key -->
-  <div id="map"></div>
   <div id="agency-key"></div>
 
-  <!-- Conduit bug logo link -->
+  <div id="map"></div>
+
   <a href="https://conduitdigital.us" target="_blank">
-    <img src="logos/conduit-logo-bug.png" class="logo-bug" alt="Conduit Bug Logo" />
+    <img src="logos/conduit-logo-bug.png" alt="Conduit Bug Logo" class="logo-bug" />
   </a>
 
-  <!-- Scripts -->
-  <script src="script.js?v=2.0"></script>
+  <script src="script.js?v=1.7"></script>
 </body>
 </html>
 
