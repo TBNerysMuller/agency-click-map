@@ -44,10 +44,21 @@ fetch('agencies.json')
         popupAnchor: [0, -40]
       });
 
+     // Create marker and add to map
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
 
-      const popup = L.popup().setContent(generatePopupContent(agency));
-      marker.bindPopup(popup);
+// Define popup HTML
+      const popupHTML = `
+        <div style="text-align:center">
+          <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
+          <h3>${agency.name}</h3>
+          <div>${agency.city}, ${agency.state}</div>
+          <div id="popup-time-${agency.name.replace(/\s+/g, '')}">Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
+          <a href="${agency.website}" target="_blank">Visit Website</a>
+        </div>
+      `;
+
+      marker.bindPopup(popupHTML);
 
       // Start live time update when popup opens
       marker.on('popupopen', () => {
@@ -65,6 +76,10 @@ fetch('agencies.json')
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
+      keyItem.addEventListener('click', () => {
+        marker.openPopup();
+          map.setView(agency.coordinates, 6); // optional: zoom to marker
+      });
       keyContainer.appendChild(keyItem);
     });
   });
