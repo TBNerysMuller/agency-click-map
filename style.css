@@ -20,15 +20,17 @@ body, html {
 
 /* Header */
 #map-header {
-  background-color: #000;
-  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above the map */
+  width: 100%;
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
-  height: 60px;
-  position: fixed;
-  z-index: 1000;
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo-title-wrapper {
