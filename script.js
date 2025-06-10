@@ -19,7 +19,7 @@ function getLiveTime(tz) {
   });
 }
 
-// Helper: Get abbreviated timezone name (e.g. EST)
+// Helper: Get abbreviated timezone name
 function getTimeZoneAbbreviation(tz) {
   const now = new Date();
   return new Intl.DateTimeFormat('en-US', {
@@ -28,14 +28,14 @@ function getTimeZoneAbbreviation(tz) {
   }).formatToParts(now).find(part => part.type === 'timeZoneName').value;
 }
 
-// Helper: Generate popup HTML
+// Generate popup HTML
 function generatePopupContent(agency) {
   const time = getLiveTime(agency.timezone);
   const tzAbbr = getTimeZoneAbbreviation(agency.timezone);
 
   return `
     <div style="text-align:center">
-      <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
+      <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;border-radius:50%;border:2px solid #00a8e9;margin-bottom:5px;">
       <h3>${agency.name}</h3>
       <div>${agency.city}, ${agency.state}</div>
       <div>Time: ${time} (${tzAbbr})</div>
@@ -44,28 +44,44 @@ function generatePopupContent(agency) {
   `;
 }
 
-// Fetch and render agencies
+// Render agencies
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
     const keyContainer = document.getElementById('agency-key');
 
     data.forEach(agency => {
-      const customIcon = L.icon({
-        iconUrl: agency.icon,
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -40]
+      // Styled divIcon with blue pin and circular logo
+      const iconHTML = `
+        <div style="
+          background-color: #00a8e9;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          border: 2px solid white;
+          box-shadow: 0 0 5px rgba(0,0,0,0.3);
+        ">
+          <img src="${agency.icon}" style="width: 30px; height: 30px; border-radius: 50%;" />
+        </div>
+      `;
+
+      const customIcon = L.divIcon({
+        className: '',
+        html: iconHTML,
+        iconSize: [50, 50],
+        iconAnchor: [25, 50],
+        popupAnchor: [0, -45]
       });
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
       marker.bindPopup(generatePopupContent(agency));
 
-      // Update popup content dynamically while open
       marker.on('popupopen', () => {
         marker._popupInterval = setInterval(() => {
-          const popup = marker.getPopup();
-          popup.setContent(generatePopupContent(agency));
+          marker.getPopup().setContent(generatePopupContent(agency));
         }, 1000);
       });
 
@@ -73,7 +89,6 @@ fetch('agencies.json')
         clearInterval(marker._popupInterval);
       });
 
-      // Zoom and center map on marker click
       marker.on('click', () => {
         map.setView(agency.coordinates, 6, {
           animate: true,
@@ -82,7 +97,7 @@ fetch('agencies.json')
         marker.openPopup();
       });
 
-      // Add to agency key with click-to-focus
+      // Add to agency key
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
@@ -97,7 +112,7 @@ fetch('agencies.json')
     });
   });
 
-// Eastern Time Header Clock
+// Eastern Time Clock
 function updateEasternClock() {
   const estClock = document.getElementById('est-time');
   const now = new Date().toLocaleTimeString('en-US', {
