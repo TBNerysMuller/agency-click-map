@@ -173,28 +173,29 @@ body, html {
 }
 
 /* Teardrop Marker Shape + Hover */
-.marker-wrapper {
+.circle-marker {
   width: 60px;
   height: 60px;
   background-color: #00a8e9;
   border: 3px solid white;
-  clip-path: polygon(
-    50% 0%,    /* top center */
-    100% 25%,  /* top right curve */
-    85% 80%,   /* bottom right */
-    50% 100%,  /* point */
-    15% 80%,   /* bottom left */
-    0% 25%     /* top left curve */
-  );
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease;
 }
 
-.marker-wrapper:hover {
-  transform: scale(1.1); /* subtle pop-up effect */
+.circle-marker img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 2px;
+}
+
+.leaflet-marker-icon:hover .circle-marker {
+  transform: scale(1.12) rotate(10deg);
 }
 
 .marker-wrapper img {
