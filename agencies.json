@@ -35,6 +35,15 @@
     "state": "NJ",
     "timezone": "America/New_York"
   },
+   {
+    "name": "Maximum Media & PR",
+    "coordinates": [43.6532, -79.3832],
+    "icon": "logos/maximum.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/624066/messages",
+    "city": "Toronto",
+    "state": "ON",
+    "timezone": "America/Toronto"
+  },
   {
     "name": "Revalize",
     "coordinates": [30.3298, -81.6592],
