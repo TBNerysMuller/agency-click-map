@@ -19,7 +19,7 @@ function getLiveTime(tz) {
   });
 }
 
-// Abbreviated timezone name (e.g. EST)
+// Get abbreviated timezone name
 function getTimeZoneAbbreviation(tz) {
   const now = new Date();
   return new Intl.DateTimeFormat('en-US', {
@@ -44,37 +44,6 @@ function generatePopupContent(agency) {
   `;
 }
 
-// Generate SVG-based teardrop marker
-function createSVGMarker(iconUrl) {
-  const svg = `
-    <svg width="64" height="80" viewBox="0 0 64 80" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <clipPath id="circleClip">
-          <circle cx="32" cy="30" r="20"/>
-        </clipPath>
-      </defs>
-      <path d="M32 0
-               C50 0, 64 20, 64 38
-               C64 60, 32 80, 32 80
-               C32 80, 0 60, 0 38
-               C0 20, 14 0, 32 0
-               Z"
-            fill="#00a8e9"
-            stroke="white"
-            stroke-width="4"/>
-      <image href="${iconUrl}" x="12" y="10" width="40" height="40" clip-path="url(#circleClip)" />
-    </svg>
-  `;
-
-  return L.divIcon({
-    className: 'custom-svg-marker',
-    html: svg,
-    iconSize: [64, 80],
-    iconAnchor: [32, 80],
-    popupAnchor: [0, -70]
-  });
-}
-
 // Load and render agency markers
 fetch('agencies.json')
   .then(response => response.json())
@@ -82,11 +51,25 @@ fetch('agencies.json')
     const keyContainer = document.getElementById('agency-key');
 
     data.forEach(agency => {
-      const customIcon = createSVGMarker(agency.icon);
+      // Simple circular marker with logo and hover animation
+      const iconHTML = `
+        <div class="circle-marker">
+          <img src="${agency.icon}" alt="${agency.name}" />
+        </div>
+      `;
+
+      const customIcon = L.divIcon({
+        className: '', // Clear Leaflet default styles
+        html: iconHTML,
+        iconSize: [60, 60],
+        iconAnchor: [30, 60],
+        popupAnchor: [0, -50]
+      });
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
       marker.bindPopup(generatePopupContent(agency));
 
+      // Live time refresh inside popup
       marker.on('popupopen', () => {
         marker._popupInterval = setInterval(() => {
           marker.getPopup().setContent(generatePopupContent(agency));
@@ -105,7 +88,7 @@ fetch('agencies.json')
         marker.openPopup();
       });
 
-      // Add to key
+      // Add to key list
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
