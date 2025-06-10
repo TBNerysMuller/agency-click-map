@@ -8,15 +8,26 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-// Function to get live time in the specified time zone
-function getLiveTime(tz) {
-  const now = new Date().toLocaleTimeString('en-US', {
-    timeZone: tz,
+// Function to generate dynamic popup content
+function generatePopupContent(agency) {
+  const timeString = new Date().toLocaleTimeString('en-US', {
+    timeZone: agency.timezone,
     hour: '2-digit',
     minute: '2-digit',
-    second: '2-digit'
+    second: '2-digit',
+    hour12: true,
+    timeZoneName: 'short'
   });
-  return now;
+
+  return `
+    <div style="text-align:center">
+      <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
+      <h3>${agency.name}</h3>
+      <div>${agency.city}, ${agency.state}</div>
+      <div>Time: ${timeString}</div>
+      <a href="${agency.website}" target="_blank">Visit Website</a>
+    </div>
+  `;
 }
 
 // Load agency data
@@ -35,16 +46,20 @@ fetch('agencies.json')
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
 
-      const popupHTML = `
-        <div style="text-align:center">
-          <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
-          <h3>${agency.name}</h3>
-          <div>${agency.city}, ${agency.state}</div>
-          <div>Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
-          <a href="${agency.website}" target="_blank">Visit Website</a>
-        </div>
-      `;
-      marker.bindPopup(popupHTML);
+      const popup = L.popup().setContent(generatePopupContent(agency));
+      marker.bindPopup(popup);
+
+      // Start live time update when popup opens
+      marker.on('popupopen', () => {
+        marker._popupInterval = setInterval(() => {
+          popup.setContent(generatePopupContent(agency));
+        }, 1000);
+      });
+
+      // Stop updating when popup closes
+      marker.on('popupclose', () => {
+        clearInterval(marker._popupInterval);
+      });
 
       // Add to agency key
       const keyItem = document.createElement('div');
