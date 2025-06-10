@@ -53,6 +53,15 @@
     "state": "NC",
     "timezone": "America/New_York"
   },
+  {
+    "name": "Revalize",
+    "coordinates": [30.3298, -81.6592],
+    "icon": "logos/revalize.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/603070/messages",
+    "city": "Jacksonville",
+    "state": "FL",
+    "timezone": "America/New_York"
+  },
    {
     "name": "Rhodes Branding",
     "coordinates": [34.0008, -81.0351],
