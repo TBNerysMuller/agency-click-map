@@ -51,29 +51,29 @@ fetch('agencies.json')
     const keyContainer = document.getElementById('agency-key');
 
     data.forEach(agency => {
-      // Styled divIcon with blue pin and circular logo
+      // Pin-style marker using CSS rotation trick
       const iconHTML = `
         <div style="
+          width: 40px;
+          height: 40px;
           background-color: #00a8e9;
-          width: 50px;
-          height: 50px;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          box-shadow: 0 0 5px rgba(0,0,0,0.3);
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 50%;
-          border: 2px solid white;
-          box-shadow: 0 0 5px rgba(0,0,0,0.3);
         ">
-          <img src="${agency.icon}" style="width: 30px; height: 30px; border-radius: 50%;" />
+          <img src="${agency.icon}" style="width: 20px; height: 20px; border-radius: 50%; transform: rotate(45deg);" />
         </div>
       `;
 
       const customIcon = L.divIcon({
         className: '',
         html: iconHTML,
-        iconSize: [50, 50],
-        iconAnchor: [25, 50],
-        popupAnchor: [0, -45]
+        iconSize: [40, 40],
+        iconAnchor: [20, 40],
+        popupAnchor: [0, -35]
       });
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
@@ -97,7 +97,7 @@ fetch('agencies.json')
         marker.openPopup();
       });
 
-      // Add to agency key
+      // Add to key
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
