@@ -61,11 +61,11 @@ fetch('agencies.json')
       `;
 
       const customIcon = L.divIcon({
-        className: '',
+        className: '', // optional: '' to avoid default Leaflet styles
         html: iconHTML,
-        iconSize: [50, 50],
-        iconAnchor: [25, 50],
-        popupAnchor: [0, -45]
+        iconSize: [54, 54],
+        iconAnchor: [27, 54], // centers the "point" of the pin
+        popupAnchor: [0, -50]
       });
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
