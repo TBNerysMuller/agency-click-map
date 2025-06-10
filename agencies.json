@@ -18,15 +18,6 @@
     "timezone": "America/New_York"
   },
   {
-    "name": "Conduit Digital",
-    "coordinates": [39.9634, -74.1873],
-    "icon": "logos/conduit.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/604890/messages",
-    "city": "Tom's River",
-    "state": "NJ",
-    "timezone": "America/New_York"
-  },
-  {
     "name": "Bend Marketing",
     "coordinates": [41.676388, -86.250275],
     "icon": "logos/bend.png",
@@ -35,22 +26,13 @@
     "state": "IN",
     "timezone": "America/New_York"
   },
-   {
-    "name": "Victory Productions",
-    "coordinates": [28.9270, -82.0038],
-    "icon": "logos/victory.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/626743/messages",
-    "city": "The Villages",
-    "state": "FL",
-    "timezone": "America/New_York"
-  },
-   {
-    "name": "The Reuben Rink Company",
-    "coordinates": [36.0948, -80.2434],
-    "icon": "logos/reuben.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/576060/messages",
-    "city": "Winston-Salem",
-    "state": "NC",
+  {
+    "name": "Conduit Digital",
+    "coordinates": [39.9634, -74.1873],
+    "icon": "logos/conduit.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/604890/messages",
+    "city": "Tom's River",
+    "state": "NJ",
     "timezone": "America/New_York"
   },
   {
@@ -63,6 +45,15 @@
     "timezone": "America/New_York"
   },
    {
+    "name": "The Reuben Rink Company",
+    "coordinates": [36.0948, -80.2434],
+    "icon": "logos/reuben.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/576060/messages",
+    "city": "Winston-Salem",
+    "state": "NC",
+    "timezone": "America/New_York"
+  },
+   {
     "name": "Rhodes Branding",
     "coordinates": [34.0008, -81.0351],
     "icon": "logos/rhodes.png",
@@ -70,5 +61,23 @@
     "city": "Columbia",
     "state": "SC",
     "timezone": "America/New_York"  
+  },
+  {
+    "name": "Snacktime Brands",
+    "coordinates": [43.0410, -87.9097],
+    "icon": "logos/snacktime.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/666350/messages",
+    "city": "Milwaukee",
+    "state": "WI",
+    "timezone": "America/Chicago"  
+  },
+  {
+    "name": "Victory Productions",
+    "coordinates": [28.9270, -82.0038],
+    "icon": "logos/victory.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/626743/messages",
+    "city": "The Villages",
+    "state": "FL",
+    "timezone": "America/New_York"
   }
 ]
