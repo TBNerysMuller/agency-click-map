@@ -34,5 +34,14 @@
     "city": "South Bend",
     "state": "IN",
     "timezone": "America/New_York"
+  },
+   {
+    "name": "Victory Productions",
+    "coordinates": [28.9270, -82.0038],
+    "icon": "logos/victory.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/626743/messages",
+    "city": "The Villages",
+    "state": "FL",
+    "timezone": "America/New_York"
   }
 ]
