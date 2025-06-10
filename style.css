@@ -174,14 +174,13 @@ body, html {
 
 /* Teardrop Marker Shape + Hover */
 .marker-wrapper {
-  width: 54px;
-  height: 54px;
+  width: 60px;
+  height: 60px;
   background-color: #00a8e9;
   border: 3px solid white;
   border-radius: 50% 50% 50% 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: rotate(45deg);
-  position: relative;
+  transform: rotate(135deg); /* ensures the teardrop points downward */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,13 +188,13 @@ body, html {
 }
 
 .marker-wrapper:hover {
-  transform: rotate(45deg) scale(1.1);
+  transform: rotate(135deg) scale(1.1); /* keep same angle but grow */
 }
 
 .marker-wrapper img {
-  width: 32px;
-  height: 32px;
-  transform: rotate(-45deg);
+  width: 40px;
+  height: 40px;
+  transform: rotate(-135deg); /* cancels wrapper rotation */
   border-radius: 50%;
   background: white;
   padding: 2px;
