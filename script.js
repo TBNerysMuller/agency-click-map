@@ -72,7 +72,9 @@ fetch('agencies.json')
       // Live time refresh inside popup
       marker.on('popupopen', () => {
         marker._popupInterval = setInterval(() => {
-          marker.getPopup().setContent(generatePopupContent(agency));
+          if (marker.isPopupOpen()) {
+            marker.getPopup().setContent(generatePopupContent(agency));
+          }
         }, 1000);
       });
 
