@@ -54,17 +54,26 @@ fetch('agencies.json')
       // Pin-style marker using CSS rotation trick
       const iconHTML = `
         <div style="
-          width: 40px;
-          height: 40px;
           background-color: #00a8e9;
-          border-radius: 50% 50% 50% 0;
-          transform: rotate(-45deg);
+          width: 50px;
+          height: 50px;
+          border-radius: 50% 50% 50% 50%;
+          position: relative;
+          border: 2px solid white;
           box-shadow: 0 0 5px rgba(0,0,0,0.3);
           display: flex;
           align-items: center;
           justify-content: center;
+          transform: rotate(45deg);
         ">
-          <img src="${agency.icon}" style="width: 20px; height: 20px; border-radius: 50%; transform: rotate(45deg);" />
+          <img src="${agency.icon}" style="
+            width: 32px;
+            height: 32px;
+            transform: rotate(-45deg);
+            border-radius: 50%;
+            background: white;
+            padding: 2px;
+          "/>
         </div>
       `;
 
