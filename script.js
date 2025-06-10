@@ -28,7 +28,7 @@ function getTimeZoneAbbreviation(tz) {
   }).formatToParts(now).find(part => part.type === 'timeZoneName').value;
 }
 
-// Popup HTML
+// Generate popup HTML
 function generatePopupContent(agency) {
   const time = getLiveTime(agency.timezone);
   const tzAbbr = getTimeZoneAbbreviation(agency.timezone);
@@ -44,27 +44,45 @@ function generatePopupContent(agency) {
   `;
 }
 
-// Render agencies
+// Generate SVG-based teardrop marker
+function createSVGMarker(iconUrl) {
+  const svg = `
+    <svg width="64" height="80" viewBox="0 0 64 80" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <clipPath id="circleClip">
+          <circle cx="32" cy="30" r="20"/>
+        </clipPath>
+      </defs>
+      <path d="M32 0
+               C50 0, 64 20, 64 38
+               C64 60, 32 80, 32 80
+               C32 80, 0 60, 0 38
+               C0 20, 14 0, 32 0
+               Z"
+            fill="#00a8e9"
+            stroke="white"
+            stroke-width="4"/>
+      <image href="${iconUrl}" x="12" y="10" width="40" height="40" clip-path="url(#circleClip)" />
+    </svg>
+  `;
+
+  return L.divIcon({
+    className: 'custom-svg-marker',
+    html: svg,
+    iconSize: [64, 80],
+    iconAnchor: [32, 80],
+    popupAnchor: [0, -70]
+  });
+}
+
+// Load and render agency markers
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
     const keyContainer = document.getElementById('agency-key');
 
     data.forEach(agency => {
-      // Teardrop marker (divIcon with rotation)
-      const iconHTML = `
-        <div class="marker-wrapper">
-          <img src="${agency.icon}" alt="${agency.name}" />
-        </div>
-      `;
-
-      const customIcon = L.divIcon({
-        className: '', // optional: '' to avoid default Leaflet styles
-        html: iconHTML,
-        iconSize: [54, 54],
-        iconAnchor: [27, 54], // centers the "point" of the pin
-        popupAnchor: [0, -50]
-      });
+      const customIcon = createSVGMarker(agency.icon);
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
       marker.bindPopup(generatePopupContent(agency));
