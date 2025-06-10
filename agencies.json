@@ -43,5 +43,14 @@
     "city": "The Villages",
     "state": "FL",
     "timezone": "America/New_York"
+  },
+  {
+    "name": "The Reuben Rink Company",
+    "coordinates": [36.0948, -80.2434],
+    "icon": "logos/reuben.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/576060/messages",
+    "city": "Winston-Salem",
+    "state": "NC",
+    "timezone": "America/New_York"
   }
 ]
