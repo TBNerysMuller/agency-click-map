@@ -27,7 +27,7 @@ body, html {
   align-items: center;
   padding: 10px 16px;
   height: 60px;
-  position: relative;
+  position: fixed;
   z-index: 1000;
 }
 
@@ -62,14 +62,16 @@ body, html {
 /* Key Container */
 #agency-key {
   position: absolute;
-  top: 70px;
-  left: 10px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 6px;
-  padding: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 1001;
-  max-width: 240px;
+  top: 175px; /* Adjust this so it appears just below the map controls */
+  left: 20px;
+  z-index: 900;
+  background-color: #00a8e9cc; /* translucent conduit blue */
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  max-width: 250px;
+}
 }
 
 .key-entry {
