@@ -1,47 +1,38 @@
 [
   {
-    "name": "Conduit Digital",
-    "location": "Tom's River, NJ, USA",
-    "timezone": "Eastern Time (EST)",
-    "lat": 39.9526,
-    "lng": -74.1652,
-    "logo": "logos/conduit.png",
-    "link": "https://conduitdigital.us"
-  },
-  {
     "name": "2626 Consulting",
-    "location": "Chicago, IL",
-    "timezone": "Central Time (CST)",
-    "lat": 41.8781,
-    "lng": -87.6298,
-    "logo": "logos/2626.png",
-    "link": "https://consulting2626.com"
-  },
-  {
-    "name": "Agency Development Solutions",
-    "location": "Louisville, KY, USA",
-    "timezone": "Eastern Time (EST)",
-    "lat": 38.2527,
-    "lng": -85.7585,
-    "logo": "logos/agency-dev.png",
-    "link": "https://example.com"
+    "coordinates": [41.8781, -87.6298],
+    "icon": "logos/2626.png",
+    "website": "https://www.consulting2626.com",
+    "city": "Chicago",
+    "state": "IL",
+    "timezone": "America/Chicago"
   },
   {
     "name": "Ascend Strategy & Design",
-    "location": "Valdosta, GA, USA",
-    "timezone": "Eastern Time (EST)",
-    "lat": 30.8327,
-    "lng": -83.2785,
-    "logo": "logos/ascend.png",
-    "link": "https://ascend.digital"
+    "coordinates": [30.8327, -83.2785],
+    "icon": "logos/ascend.png",
+    "website": "https://www.ascend.digital",
+    "city": "Valdosta",
+    "state": "GA",
+    "timezone": "America/New_York"
   },
   {
+    "name": "Conduit Digital",
+    "coordinates": [39.3995, -74.5634],
+    "icon": "logos/conduit.png",
+    "website": "https://www.conduitdigital.us",
+    "city": "Tom's River",
+    "state": "NJ",
+    "timezone": "America/New_York"
+  }
+  {
     "name": "Bend Marketing",
-    "location": "South Bend, IN, USA",
-    "timezone": "Eastern Time (EST)",
-    "lat": 41.6764,
-    "lng": -86.2520,
-    "logo": "logos/bend.png",
-    "link": "https://bendyourmarketing.com"
+    "coordinates": [39.3995, -74.5634],
+    "icon": "logos/bend.png",
+    "website": "https://www.bendyourmarketing.com",
+    "city": "South Bend",
+    "state": "IN",
+    "timezone": "America/New_York"
   }
 ]
