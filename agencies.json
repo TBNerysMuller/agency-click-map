@@ -44,7 +44,7 @@
     "state": "FL",
     "timezone": "America/New_York"
   },
-  {
+   {
     "name": "The Reuben Rink Company",
     "coordinates": [36.0948, -80.2434],
     "icon": "logos/reuben.png",
@@ -52,5 +52,14 @@
     "city": "Winston-Salem",
     "state": "NC",
     "timezone": "America/New_York"
+  },
+   {
+    "name": "Rhodes Branding",
+    "coordinates": [34.0008, -81.0351],
+    "icon": "logos/rhodes.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/646687/messages",
+    "city": "Columbia",
+    "state": "SC",
+    "timezone": "America/New_York"  
   }
 ]
