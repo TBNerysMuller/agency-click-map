@@ -9,6 +9,15 @@
     "timezone": "America/Chicago"
   },
   {
+    "name": "Agency Development Solutions",
+    "coordinates": [38.2469, -85.7664],
+    "icon": "logos/agencydev.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/607676/messages",
+    "city": "Louisville",
+    "state": "KY",
+    "timezone": "America/New_York"
+  },
+  {
     "name": "Ascend Strategy & Design",
     "coordinates": [30.8329, -83.2772],
     "icon": "logos/ascend.png",
@@ -27,12 +36,120 @@
     "timezone": "America/New_York"
   },
   {
+    "name": "Bloom Consulting Firm",
+    "coordinates": [32.0809, -81.0912],
+    "icon": "logos/bloom.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/655306/messages",
+    "city": "Savannah",
+    "state": "GA",
+    "timezone": "America/Phoenix"
+  },
+  {
+    "name": "Brotherly SEO",
+    "coordinates": [33.4949, -111.9217],
+    "icon": "logos/brotherly.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/654697/messages",
+    "city": "Scottsdale",
+    "state": "AZ",
+    "timezone": "America/Phoenix"
+  },
+   {
+    "name": "Business Builders",
+    "coordinates": [29.8922, -81.3139],
+    "icon": "logos/builders.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/546553/messages",
+    "city": "St Augustine",
+    "state": "FL",
+    "timezone": "America/New_York"
+  },
+  {
     "name": "Conduit Digital",
     "coordinates": [39.9634, -74.1873],
     "icon": "logos/conduit.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/604890/messages",
     "city": "Tom's River",
     "state": "NJ",
+    "timezone": "America/New_York"
+  },
+  {
+    "name": "Dozanü Innovations",
+    "coordinates": [30.2672, -97.7431],
+    "icon": "logos/dozanu.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/593674/messages",
+    "city": "Austin",
+    "state": "TX",
+    "timezone": "America/Chicago"
+  },
+   {
+    "name": "Harbor Collective",
+    "coordinates": [32.7157, -117.1611],
+    "icon": "logos/harbor.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/665692/messages",
+    "city": "San Diego",
+    "state": "CA",
+    "timezone": "America/Los_Angeles"
+  },
+  {
+    "name": "Innocom Agency",
+    "coordinates": [28.5384, -81.3789],
+    "icon": "logos/innocom.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/664477",
+    "city": "Orlando",
+    "state": "FL",
+    "timezone": "America/New_York"
+  },
+  {
+    "name": "Jacob Tyler",
+    "coordinates": [32.9595, -117.2653],
+    "icon": "logos/jt.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/609416/messages",
+    "city": "Del Mar",
+    "state": "CA",
+    "timezone": "America/Los_Angeles"
+  },
+   {
+    "name": "Jameson Grace Marketing",
+    "coordinates": [32.4753, -97.0103],
+    "icon": "logos/jameson.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/666724/messages",
+    "city": "Midlothian",
+    "state": "TX",
+    "timezone": "America/Chicago"
+  },
+   {
+    "name": "JXM",
+    "coordinates": [29.4252, -98.4946],
+    "icon": "logos/jxm.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/501209/messages",
+    "city": "San Antonio",
+    "state": "TX",
+    "timezone": "America/Chicago"
+  },
+  {
+    "name": "Lion Bolt Media",
+    "coordinates": [42.3555, -71.0565],
+    "icon": "logos/lion.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/663906/messages",
+    "city": "Boston",
+    "state": "MA",
+    "timezone": "America/New_York"
+  },
+  {
+    "name": "Little Jack Marketing",
+    "coordinates": [41.881832, -87.623177],
+    "icon": "logos/jack.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/652777/messages",
+    "city": "Chicago",
+    "state": "IL",
+    "timezone": "America/Chicago"
+  },
+  {
+    "name": "Maverick Media",
+    "coordinates": [40.6884, -75.2207],
+    "icon": "logos/maverick.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/610851/messages",
+    "city": "Easton",
+    "state": "PA",
     "timezone": "America/New_York"
   },
    {
