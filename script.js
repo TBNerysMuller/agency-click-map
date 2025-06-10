@@ -1,36 +1,38 @@
 // Initialize the map
-const map = L.map('map').setView([39.8283, -98.5795], 4); // Centered on US
+const map = L.map('map').setView([39.8283, -98.5795], 4);
 
-// Load CartoDB Positron tiles (free)
+// Load CartoDB Positron tiles
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; OpenStreetMap contributors & CartoDB',
   subdomains: 'abcd',
   maxZoom: 19
 }).addTo(map);
 
-// Function to generate dynamic popup content
-function generatePopupContent(agency) {
-  const timeString = new Date().toLocaleTimeString('en-US', {
-    timeZone: agency.timezone,
+// Helper: Get formatted time string
+function getLiveTime(tz) {
+  return new Date().toLocaleTimeString('en-US', {
+    timeZone: tz,
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: true,
-    timeZoneName: 'short'
+    hour12: true
   });
+}
 
+// Helper: Generate popup HTML content
+function generatePopupContent(agency) {
   return `
     <div style="text-align:center">
       <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
       <h3>${agency.name}</h3>
       <div>${agency.city}, ${agency.state}</div>
-      <div>Time: ${timeString}</div>
+      <div>Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
       <a href="${agency.website}" target="_blank">Visit Website</a>
     </div>
   `;
 }
 
-// Load agency data
+// Fetch and render agency markers
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
@@ -44,47 +46,34 @@ fetch('agencies.json')
         popupAnchor: [0, -40]
       });
 
-     // Create marker and add to map
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
+      marker.bindPopup(generatePopupContent(agency));
 
-// Define popup HTML
-      const popupHTML = `
-        <div style="text-align:center">
-          <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;margin-bottom:5px;">
-          <h3>${agency.name}</h3>
-          <div>${agency.city}, ${agency.state}</div>
-          <div id="popup-time-${agency.name.replace(/\s+/g, '')}">Time: ${getLiveTime(agency.timezone)} (${agency.timezone})</div>
-          <a href="${agency.website}" target="_blank">Visit Website</a>
-        </div>
-      `;
-
-      marker.bindPopup(popupHTML);
-
-      // Start live time update when popup opens
+      // Update popup every second while open
       marker.on('popupopen', () => {
         marker._popupInterval = setInterval(() => {
+          const popup = marker.getPopup();
           popup.setContent(generatePopupContent(agency));
         }, 1000);
       });
 
-      // Stop updating when popup closes
       marker.on('popupclose', () => {
         clearInterval(marker._popupInterval);
       });
 
-      // Add to agency key
+      // Render agency key and click to focus
       const keyItem = document.createElement('div');
       keyItem.classList.add('key-entry');
       keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
       keyItem.addEventListener('click', () => {
+        map.setView(agency.coordinates, 6);
         marker.openPopup();
-          map.setView(agency.coordinates, 6); // optional: zoom to marker
       });
       keyContainer.appendChild(keyItem);
     });
   });
 
-// Eastern Time Clock
+// Eastern Time Clock (Header)
 function updateEasternClock() {
   const estClock = document.getElementById('est-time');
   const now = new Date().toLocaleTimeString('en-US', {
@@ -98,7 +87,7 @@ function updateEasternClock() {
 setInterval(updateEasternClock, 1000);
 updateEasternClock();
 
-// Mobile Toggle
+// Mobile Key Toggle
 const toggleButton = document.getElementById('toggle-key');
 if (toggleButton) {
   toggleButton.addEventListener('click', () => {
