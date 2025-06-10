@@ -85,21 +85,21 @@ body, html {
 /* Key Container */
 #agency-key {
   position: absolute;
-  top: 250px;
+  top: 180px; /* was 250px — shift up */
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
-  padding: 10px 15px;
+  padding: 8px 12px; /* was 10px 15px */
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
   color: black;
-  max-width: 250px;
+  max-width: 220px; /* slightly narrower */
 }
 
 .key-entry {
   display: flex;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 6px; /* was 8px */
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -110,16 +110,16 @@ body, html {
 }
 
 .key-entry img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+  width: 18px; /* was 20px */
+  height: 18px;
+  margin-right: 8px;
   border-radius: 50%;
   border: 1px solid white;
   background-color: white;
 }
 
 .key-entry span {
-  font-size: 13px;
+  font-size: 12px; /* was 13px */
   color: black;
 }
 
