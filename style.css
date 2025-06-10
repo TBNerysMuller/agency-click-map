@@ -63,6 +63,26 @@ body, html {
   white-space: nowrap;
 }
 
+.leaflet-top.leaflet-left {
+  top: 80px; /* Moves it down below the header */
+  left: 10px;
+  z-index: 1000; /* Ensures it's above map content */
+}
+
+/* Make zoom control buttons Conduit blue */
+.leaflet-control-zoom a {
+  background-color: #00a8e9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for better UX */
+.leaflet-control-zoom a:hover {
+  background-color: #008bbd;
+}
+
 /* Key Container */
 #agency-key {
   position: absolute;
