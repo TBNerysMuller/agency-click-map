@@ -8,7 +8,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   maxZoom: 19
 }).addTo(map);
 
-// Helper: Get live formatted time string
+// Get live formatted time string
 function getLiveTime(tz) {
   return new Date().toLocaleTimeString('en-US', {
     timeZone: tz,
@@ -19,7 +19,7 @@ function getLiveTime(tz) {
   });
 }
 
-// Helper: Get abbreviated timezone name
+// Abbreviated timezone name (e.g. EST)
 function getTimeZoneAbbreviation(tz) {
   const now = new Date();
   return new Intl.DateTimeFormat('en-US', {
@@ -28,7 +28,7 @@ function getTimeZoneAbbreviation(tz) {
   }).formatToParts(now).find(part => part.type === 'timeZoneName').value;
 }
 
-// Generate popup HTML
+// Popup HTML
 function generatePopupContent(agency) {
   const time = getLiveTime(agency.timezone);
   const tzAbbr = getTimeZoneAbbreviation(agency.timezone);
@@ -51,38 +51,21 @@ fetch('agencies.json')
     const keyContainer = document.getElementById('agency-key');
 
     data.forEach(agency => {
-      // Pin-style marker using CSS rotation trick
+      // Teardrop marker (divIcon with rotation)
       const iconHTML = `
-        <div style="
-          background-color: #00a8e9;
-          width: 50px;
-          height: 50px;
-          border-radius: 50% 50% 50% 50%;
-          position: relative;
-          border: 2px solid white;
-          box-shadow: 0 0 5px rgba(0,0,0,0.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transform: rotate(45deg);
-        ">
-          <img src="${agency.icon}" style="
-            width: 32px;
-            height: 32px;
-            transform: rotate(-45deg);
-            border-radius: 50%;
-            background: white;
-            padding: 2px;
-          "/>
+        <div class="marker-wrapper">
+          <div class="marker-pin">
+            <img src="${agency.icon}" alt="${agency.name}" />
+          </div>
         </div>
       `;
 
       const customIcon = L.divIcon({
         className: '',
         html: iconHTML,
-        iconSize: [40, 40],
-        iconAnchor: [20, 40],
-        popupAnchor: [0, -35]
+        iconSize: [50, 50],
+        iconAnchor: [25, 50],
+        popupAnchor: [0, -45]
       });
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
