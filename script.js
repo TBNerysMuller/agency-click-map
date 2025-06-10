@@ -39,7 +39,7 @@ function generatePopupContent(agency) {
       <h3>${agency.name}</h3>
       <div>${agency.city}, ${agency.state}</div>
       <div>Time: ${time} (${tzAbbr})</div>
-      <a href="${agency.website}" target="_blank">Visit Website</a>
+      <a href="${agency.website}" target="_blank">View Teamwork Thread</a>
     </div>
   `;
 }
