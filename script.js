@@ -54,9 +54,7 @@ fetch('agencies.json')
       // Teardrop marker (divIcon with rotation)
       const iconHTML = `
         <div class="marker-wrapper">
-          <div class="marker-pin">
-            <img src="${agency.icon}" alt="${agency.name}" />
-          </div>
+          <img src="${agency.icon}" alt="${agency.name}" />
         </div>
       `;
 
