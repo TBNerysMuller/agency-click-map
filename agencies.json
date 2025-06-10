@@ -3,16 +3,16 @@
     "name": "2626 Consulting",
     "coordinates": [41.8781, -87.6298],
     "icon": "logos/2626.png",
-    "website": "https://www.consulting2626.com",
+    "website": "https://consulting2626.com",
     "city": "Chicago",
     "state": "IL",
     "timezone": "America/Chicago"
   },
   {
     "name": "Ascend Strategy & Design",
-    "coordinates": [30.8327, -83.2785],
+    "coordinates": [30.8329, -83.2772],
     "icon": "logos/ascend.png",
-    "website": "https://www.ascend.digital",
+    "website": "https://ascend.digital",
     "city": "Valdosta",
     "state": "GA",
     "timezone": "America/New_York"
@@ -28,7 +28,7 @@
   },
   {
     "name": "Bend Marketing",
-    "coordinates": [39.3995, -74.5634],
+    "coordinates": [41.676388, -86.250275],
     "icon": "logos/bend.png",
     "website": "https://www.bendyourmarketing.com",
     "city": "South Bend",
