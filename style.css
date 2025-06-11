@@ -65,7 +65,7 @@ body, html {
 
 /* Zoom Controls */
 .leaflet-top.leaflet-left {
-  top: 85px; !important;
+  top: 95px; !important;
   left: 10px;
   z-index: 1000;
 }
@@ -235,69 +235,62 @@ body, html {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   #map-header {
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
 
   .logo-title-wrapper {
-    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   #map-title {
-    font-size: 16px;
-    display: inline-block;
-    font-weight: 600;
-    color: #00a8e9;
-    white-space: nowrap;
-    margin-left: 8px;
+    font-size: 18px;
+    margin-left: 10px;
   }
 
   .est-time-bar {
     font-size: 13px;
-    min-width: 40%;
-    text-align: right;
+    padding-top: 4px;
+    width: 100%;
+    text-align: left;
+  }
+
+  #toggle-key {
+    display: block;
+    margin-left: auto;
+    margin-top: -24px;
+    margin-right: 12px;
+    background-color: #00a8e9;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
   }
 
   #agency-key {
     display: none;
     position: fixed;
-    top: 100px; /* was 60px — now avoids header + button */
+    top: 130px;
     left: 10px;
     width: 85%;
     max-height: 50vh;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
     background-color: rgba(0, 168, 233, 0.9);
     border-radius: 10px;
     padding: 10px;
     z-index: 999;
   }
 
-  #toggle-key {
-    display: block;
-    position: fixed;
-    top: 12px;
-    right: 12px; /* moved from left */
-    z-index: 1001;
-    background-color: #00a8e9;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    width: auto;
-  }
-
-  #toggle-key:hover {
-    background-color: #008bbd;
-  }
-
   .key-entry {
-    font-size: 14px;
+    font-size: 13px;
     padding: 6px 4px;
   }
 
