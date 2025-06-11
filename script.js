@@ -35,11 +35,34 @@ function generatePopupContent(agency) {
 
   return `
     <div style="text-align:center">
-      <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;border-radius:50%;border:2px solid #00a8e9;margin-bottom:5px;">
+      <img src="${agency.icon}" alt="${agency.name}" style="width:50px;height:50px;border-radius:50%;border:2px solid #00a8e9;margin-bottom:8px;">
       <h3>${agency.name}</h3>
       <div>${agency.city}, ${agency.state}</div>
-      <div>Time: ${time} (${tzAbbr})</div>
-      <a href="${agency.website}" target="_blank">View Teamwork Thread</a>
+      <div style="margin-bottom:10px;">Time: ${time} (${tzAbbr})</div>
+      <div style="display:flex; justify-content:center; gap:10px; margin-top:6px;">
+        <a href="${agency.website}" target="_blank" title="View Teamwork Thread" style="
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          width:28px;
+          height:28px;
+          background-color:#00a8e9;
+          border-radius:50%;
+        ">
+          <img src="assets/teamwork-icon.png" alt="Teamwork" style="width:16px; height:16px;">
+        </a>
+        <a href="${agency.linkedin}" target="_blank" title="View LinkedIn Profile" style="
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          width:28px;
+          height:28px;
+          background-color:#0077b5;
+          border-radius:50%;
+        ">
+          <img src="assets/linkedin-icon.png" alt="LinkedIn" style="width:16px; height:16px;">
+        </a>
+      </div>
     </div>
   `;
 }
