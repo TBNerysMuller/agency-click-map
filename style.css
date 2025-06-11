@@ -108,7 +108,7 @@ body, html {
 #agency-key {
   display: block; /* hidden by default for mobile */
   position: absolute;
-  top: 235px !important;/* lowered to clear zoom controls */
+  top: 200px !important;/* lowered to clear zoom controls */
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
@@ -284,7 +284,7 @@ body, html {
   #toggle-key {
     display: block;
     position: absolute;
-    top: 35px;
+    top: 40px;
     right: 12px;
     background-color: #00a8e9;
     color: white;
@@ -299,7 +299,7 @@ body, html {
 
   #agency-key {
     display: none;
-    top: 235px !important;
+    top: 200px !important;
     left: 10px;
     width: 85%;
     max-height: 45vh;
@@ -323,4 +323,17 @@ body, html {
     width: 22px;
     height: 22px;
   }
+}
+
+  .leaflet-marker-icon > div,
+  .circle-marker {
+    display: flex !important;
+    width: 60px !important;
+    height: 60px !important;
+    opacity: 1 !important;
+    z-index: 999 !important;
+}
+  
+  #agency-key.show {
+    display: block !important;
 }
