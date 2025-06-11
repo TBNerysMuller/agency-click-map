@@ -69,7 +69,7 @@ function generatePopupContent(agency) {
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
-    const keyContainer = document.getElementById('agency-key');
+    Container = document.getElementById('agency-key');
 
     data.forEach(agency => {
       // Simple circular marker with logo and hover animation
@@ -157,6 +157,6 @@ const toggleButton = document.getElementById('toggle-key');
 if (toggleButton) {
   toggleButton.addEventListener('click', () => {
     const key = document.getElementById('agency-key');
-    key.style.display = key.style.display === 'block' ? 'none' : 'block';
+    key.classList.toggle('show');
   });
 }
