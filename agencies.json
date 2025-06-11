@@ -197,6 +197,15 @@
     "state": "WI",
     "timezone": "America/Chicago"  
   },
+   {
+    "name": "Stevenson University",
+    "coordinates": [39.4648, -76.7337],
+    "icon": "logos/stevenson.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/602457/messages",
+    "city": "Baltimore",
+    "state": "MD",
+    "timezone": "America/New_York"  
+  },
   {
     "name": "Victory Productions",
     "coordinates": [28.9270, -82.0038],
