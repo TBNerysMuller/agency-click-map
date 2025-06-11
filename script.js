@@ -69,74 +69,65 @@ function generatePopupContent(agency) {
 fetch('agencies.json')
   .then(response => response.json())
   .then(data => {
-    Container = document.getElementById('agency-key');
+  const keyContainer = document.getElementById('agency-key');
 
-    data.forEach(agency => {
-      // Simple circular marker with logo and hover animation
-      const iconHTML = `
-        <div class="circle-marker">
-          <img src="${agency.icon}" alt="${agency.name}" />
-        </div>
-      `;
+  data.forEach(agency => {
+    const iconHTML = `
+      <div class="circle-marker">
+        <img src="${agency.icon}" alt="${agency.name}" />
+      </div>
+    `;
 
-      const customIcon = L.divIcon({
-        className: '', // Clear Leaflet default styles
-        html: iconHTML,
-        iconSize: [60, 60],
-        iconAnchor: [30, 60],
-        popupAnchor: [0, -50]
-      });
-
-      const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
-      marker.bindPopup(generatePopupContent(agency));
-
-      // Prevent double-click issue inside popup
-      marker.on('popupopen', () => {
-        const popupEl = document.querySelector('.leaflet-popup-content');
-        if (popupEl) {
-          L.DomEvent.disableClickPropagation(popupEl);
-        }
-      
-        marker._popupInterval = setInterval(() => {
-          marker.getPopup().setContent(generatePopupContent(agency));
-        }, 1000);
-      });
-
-      // Live time refresh inside popup
-      marker.on('popupopen', () => {
-        marker._popupInterval = setInterval(() => {
-          if (marker.isPopupOpen()) {
-            marker.getPopup().setContent(generatePopupContent(agency));
-          }
-        }, 1000);
-      });
-
-      marker.on('popupclose', () => {
-        clearInterval(marker._popupInterval);
-      });
-
-      marker.on('click', () => {
-        map.setView(agency.coordinates, 6, {
-          animate: true,
-          duration: 0.5
-        });
-        marker.openPopup();
-      });
-
-      // Add to key list
-      const keyItem = document.createElement('div');
-      keyItem.classList.add('key-entry');
-      keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
-      keyItem.addEventListener('click', () => {
-        map.setView(agency.coordinates, 6, {
-          animate: true,
-          duration: 0.5
-        });
-        marker.openPopup();
-      });
-      keyContainer.appendChild(keyItem);
+    const customIcon = L.divIcon({
+      className: '',
+      html: iconHTML,
+      iconSize: [60, 60],
+      iconAnchor: [30, 60],
+      popupAnchor: [0, -50]
     });
+
+    const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
+    marker.bindPopup(generatePopupContent(agency));
+
+    marker.on('popupopen', () => {
+      const popupEl = document.querySelector('.leaflet-popup-content');
+      if (popupEl) {
+        L.DomEvent.disableClickPropagation(popupEl);
+      }
+
+      marker._popupInterval = setInterval(() => {
+        if (marker.isPopupOpen()) {
+          marker.getPopup().setContent(generatePopupContent(agency));
+        }
+      }, 1000);
+    });
+
+    marker.on('popupclose', () => {
+      clearInterval(marker._popupInterval);
+    });
+
+    marker.on('click', () => {
+      map.setView(agency.coordinates, 6, {
+        animate: true,
+        duration: 0.5
+      });
+      marker.openPopup();
+    });
+
+    // ✅ Add to agency key
+    const keyItem = document.createElement('div');
+    keyItem.classList.add('key-entry');
+    keyItem.innerHTML = `<img src="${agency.icon}" alt="${agency.name}" /><span>${agency.name}</span>`;
+    keyItem.addEventListener('click', () => {
+      map.setView(agency.coordinates, 6, {
+        animate: true,
+        duration: 0.5
+      });
+      marker.openPopup();
+    });
+    keyContainer.appendChild(keyItem);
   });
+});
 
 // Eastern Time Clock
 function updateEasternClock() {
