@@ -177,7 +177,6 @@ body, html {
   display: none;
 }
 
-/* Teardrop Marker Shape + Hover */
 .circle-marker {
   width: 60px;
   height: 60px;
@@ -192,8 +191,8 @@ body, html {
 }
 
 .circle-marker img {
-  width: 36px;
-  height: 36px;
+  width: 38px !important;
+  height: 38px !important;
   border-radius: 50%;
   background-color: white;
   padding: 2px;
@@ -235,14 +234,33 @@ body, html {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    #map-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  #map-title {
+    font-size: 18px;
+    flex: 1;
+    min-width: 50%;
+  }
+  
+  .est-time-bar {
+    font-size: 13px;
+    min-width: 40%;
+    text-align: right;
+  }
+  
   #agency-key {
     display: none;
     position: fixed;
     top: 60px;
     left: 10px;
     width: 85%;
-    max-height: 60vh;
+    max-height: 50vh;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
     background-color: rgba(0, 168, 233, 0.9);
     border-radius: 10px;
     padding: 10px;
@@ -275,8 +293,7 @@ body, html {
     width: 22px;
     height: 22px;
   }
-}
-  @media (max-width: 768px) {
+
   .leaflet-popup-content img {
     width: 40px !important;
     height: 40px !important;
@@ -291,20 +308,20 @@ body, html {
   }
 
   #toggle-key {
-    display: block;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    background-color: #00a8e9;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-left: 16px;
-    margin-top: 10px;
-  }
+  position: fixed;
+  top: 12px;
+  right: 12px; /* instead of left */
+  z-index: 1001;
+  background-color: #00a8e9;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
 
   #toggle-key:hover {
     background-color: #008bbd;
