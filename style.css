@@ -36,44 +36,47 @@ body, html {
   width: 100%;
   background-color: #000;
   color: white;
-  padding: 10px 20px;
-  font-family: 'Poppins', sans-serif;
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.header-row {
-  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo-title-wrapper {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
+  min-width: 60%;
+}
+
+.logo-animate {
+  height: 38px;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 #map-title {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 700;
   color: #00a8e9;
   white-space: nowrap;
-  text-decoration: none !important;
 }
 
 .est-time-bar {
-  font-size: 18px;
+  font-size: 15px;
   color: #FFFFFF;
   white-space: nowrap;
-  text-decoration: none !important;
+  margin-top: 6px;
 }
 
 /* Zoom Controls */
 .leaflet-top.leaflet-left {
-  top: 110px;
+  top: 105px !important;
   left: 10px;
   z-index: 1000;
 }
@@ -93,7 +96,7 @@ body, html {
 /* Key Container */
 #agency-key {
   position: absolute;
-  top: 110px;
+  top: 115px; /* lowered to clear zoom controls */
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
@@ -102,6 +105,7 @@ body, html {
   font-family: 'Poppins', sans-serif;
   color: black;
   max-width: 220px;
+  display: none; /* hidden by default for mobile */
 }
 
 .key-entry {
@@ -164,11 +168,6 @@ body, html {
   width: 48px;
   height: auto;
   z-index: 1000;
-}
-
-/* Toggle Key (Mobile) */
-#toggle-key {
-  display: none;
 }
 
 /* Pin Marker Base */
@@ -249,35 +248,33 @@ body, html {
   }
 
   .logo-title-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-animate {
+    height: 30px;
   }
 
   #map-title {
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 8px;
     flex-shrink: 1;
   }
 
-  .header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
   .est-time-bar {
+    width: 50%;
     font-size: 13px;
-    width: 60%;
-    text-align: left;
+    margin-top: 6px;
     padding-left: 0;
-    text-decoration: none !important;
   }
 
   #toggle-key {
     display: block;
+    position: absolute;
+    top: 55px;
+    right: 12px;
     background-color: #00a8e9;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -290,7 +287,8 @@ body, html {
   }
 
   #agency-key {
-    top: 115px !important;
+    display: none;
+    top: 105px !important;
     left: 10px;
     width: 85%;
     max-height: 45vh;
@@ -310,4 +308,3 @@ body, html {
     height: 22px;
   }
 }
-
