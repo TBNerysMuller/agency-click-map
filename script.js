@@ -40,27 +40,25 @@ function generatePopupContent(agency) {
       <div>${agency.city}, ${agency.state}</div>
       <div style="margin-bottom:10px;">Time: ${time} (${tzAbbr})</div>
       <div style="display:flex; justify-content:center; gap:10px; margin-top:6px;">
-        <a href="${agency.website}" target="_blank" title="View Teamwork Thread" style="
+        <a href="${agency.website}" target="_blank" title="Teamwork" style="
           display:inline-flex;
           align-items:center;
           justify-content:center;
-          width:28px;
-          height:28px;
-          background-color:#00a8e9;
+          width:32px;
+          height:32px;
           border-radius:50%;
         ">
-          <img src="assets/teamwork-icon.png" alt="Teamwork" style="width:16px; height:16px;">
+          <img src="assets/teamwork-icon.png" alt="Teamwork" style="width:28px;height:28px;border-radius:50%;">
         </a>
-        <a href="${agency.linkedin}" target="_blank" title="View LinkedIn Profile" style="
+        <a href="${agency.linkedin}" target="_blank" title="LinkedIn" style="
           display:inline-flex;
           align-items:center;
           justify-content:center;
-          width:28px;
-          height:28px;
-          background-color:#0077b5;
+          width:32px;
+          height:32px;
           border-radius:50%;
         ">
-          <img src="assets/linkedin-icon.png" alt="LinkedIn" style="width:16px; height:16px;">
+          <img src="assets/linkedin-icon.png" alt="LinkedIn" style="width:28px;height:28px;border-radius:50%;">
         </a>
       </div>
     </div>
@@ -91,6 +89,18 @@ fetch('agencies.json')
 
       const marker = L.marker(agency.coordinates, { icon: customIcon }).addTo(map);
       marker.bindPopup(generatePopupContent(agency));
+
+      // Prevent double-click issue inside popup
+      marker.on('popupopen', () => {
+        const popupEl = document.querySelector('.leaflet-popup-content');
+        if (popupEl) {
+          L.DomEvent.disableClickPropagation(popupEl);
+        }
+      
+        marker._popupInterval = setInterval(() => {
+          marker.getPopup().setContent(generatePopupContent(agency));
+        }, 1000);
+      });
 
       // Live time refresh inside popup
       marker.on('popupopen', () => {
