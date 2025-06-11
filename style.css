@@ -37,9 +37,10 @@ body, html {
   background-color: #000;
   color: white;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   padding: 10px 20px;
   font-family: 'Poppins', sans-serif;
 }
@@ -74,6 +75,16 @@ body, html {
   margin-top: 6px;
 }
 
+#toggle-key {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #toggle-key {
+    display: block;
+  }
+}
+
 /* Zoom Controls */
 .leaflet-top.leaflet-left {
   top: 105px !important;
@@ -96,7 +107,7 @@ body, html {
 /* Key Container */
 #agency-key {
   position: absolute;
-  top: 115px; /* lowered to clear zoom controls */
+  top: 130px !important;/* lowered to clear zoom controls */
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
@@ -273,7 +284,7 @@ body, html {
   #toggle-key {
     display: block;
     position: absolute;
-    top: 55px;
+    top: 40px;
     right: 12px;
     background-color: #00a8e9;
     color: white;
@@ -288,7 +299,7 @@ body, html {
 
   #agency-key {
     display: none;
-    top: 105px !important;
+    top: 130px !important;
     left: 10px;
     width: 85%;
     max-height: 45vh;
