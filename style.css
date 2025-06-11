@@ -237,49 +237,55 @@ body, html {
   #map-header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    gap: 4px;
+    padding: 10px 12px;
   }
 
   .logo-title-wrapper {
-    flex-direction: row;
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
+    gap: 8px;
     width: 100%;
+    justify-content: space-between;
   }
 
   #map-title {
     font-size: 18px;
-    margin-left: 10px;
+    color: #00a8e9;
+    font-weight: 600;
+    flex-grow: 1;
   }
 
   .est-time-bar {
     font-size: 13px;
-    padding-top: 4px;
+    color: white;
     width: 100%;
     text-align: left;
   }
 
   #toggle-key {
-    display: block;
-    margin-left: auto;
-    margin-top: -24px;
-    margin-right: 12px;
+    display: inline-block;
     background-color: #00a8e9;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    padding: 6px 10px;
+    padding: 6px 12px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
+    margin-top: 2px;
+  }
+
+  #toggle-key:hover {
+    background-color: #008bbd;
   }
 
   #agency-key {
     display: none;
     position: fixed;
-    top: 130px;
-    left: 10px;
+    top: 100px; /* move down slightly */
+    left: 12px;
     width: 85%;
     max-height: 50vh;
     overflow-y: auto;
@@ -290,33 +296,12 @@ body, html {
   }
 
   .key-entry {
-    font-size: 13px;
+    font-size: 14px;
     padding: 6px 4px;
   }
 
   .key-entry img {
     width: 22px;
     height: 22px;
-  }
-
-  .leaflet-popup-content img {
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  .leaflet-popup-content h3 {
-    font-size: 16px;
-  }
-
-  .leaflet-popup-content {
-    font-size: 12px;
-  }
-
-  .logo-animate {
-    height: 30px;
-  }
-
-  .logo-bug {
-    width: 40px;
   }
 }
