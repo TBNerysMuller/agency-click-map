@@ -234,27 +234,34 @@ body, html {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    #map-header {
+  #map-header {
     flex-wrap: wrap;
     gap: 10px;
   }
-  
-  #map-title {
-    font-size: 18px;
-    flex: 1;
-    min-width: 50%;
+
+  .logo-title-wrapper {
+    display: flex !important;
   }
-  
+
+  #map-title {
+    font-size: 16px;
+    display: inline-block;
+    font-weight: 600;
+    color: #00a8e9;
+    white-space: nowrap;
+    margin-left: 8px;
+  }
+
   .est-time-bar {
     font-size: 13px;
     min-width: 40%;
     text-align: right;
   }
-  
+
   #agency-key {
     display: none;
     position: fixed;
-    top: 60px;
+    top: 100px; /* was 60px — now avoids header + button */
     left: 10px;
     width: 85%;
     max-height: 50vh;
@@ -271,17 +278,22 @@ body, html {
     display: block;
     position: fixed;
     top: 12px;
-    left: 12px;
+    right: 12px; /* moved from left */
     z-index: 1001;
     background-color: #00a8e9;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 14px;
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
     border: none;
     cursor: pointer;
+    width: auto;
+  }
+
+  #toggle-key:hover {
+    background-color: #008bbd;
   }
 
   .key-entry {
@@ -305,26 +317,6 @@ body, html {
 
   .leaflet-popup-content {
     font-size: 12px;
-  }
-
-  #toggle-key {
-  position: fixed;
-  top: 12px;
-  right: 12px; /* instead of left */
-  z-index: 1001;
-  background-color: #00a8e9;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-}
-
-  #toggle-key:hover {
-    background-color: #008bbd;
   }
 
   .logo-animate {
