@@ -66,7 +66,7 @@ function generatePopupContent(agency) {
 }
 
 // Load and render agency markers
-fetch('agencies.json')
+fetch('agencies.json?nocache=' + new Date().getTime())
   .then(response => response.json())
   .then(data => {
   const keyContainer = document.getElementById('agency-key');
