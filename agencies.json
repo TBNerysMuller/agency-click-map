@@ -4,6 +4,7 @@
     "coordinates": [41.8781, -87.6298],
     "icon": "logos/2626.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/589386/messages",
+    "linkedin": "https://www.linkedin.com/company/2626digital",
     "city": "Chicago",
     "state": "IL",
     "timezone": "America/Chicago"
@@ -13,6 +14,7 @@
     "coordinates": [38.2469, -85.7664],
     "icon": "logos/agencydev.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/607676/messages",
+    "linkedin": "https://www.linkedin.com/in/bradsipes",
     "city": "Louisville",
     "state": "KY",
     "timezone": "America/New_York"
@@ -22,6 +24,7 @@
     "coordinates": [30.8329, -83.2772],
     "icon": "logos/ascend.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/614512/messages",
+    "linkedin": "https://www.linkedin.com/company/ascendstrategyanddesign",
     "city": "Valdosta",
     "state": "GA",
     "timezone": "America/New_York"
@@ -31,6 +34,7 @@
     "coordinates": [41.676388, -86.250275],
     "icon": "logos/bend.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/593671/messages",
+    "linkedin": "https://www.linkedin.com/company/bend-marketing",
     "city": "South Bend",
     "state": "IN",
     "timezone": "America/New_York"
@@ -40,6 +44,7 @@
     "coordinates": [32.0809, -81.0912],
     "icon": "logos/bloom.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/655306/messages",
+    "linkedin": "https://www.linkedin.com/company/bloom-consulting-firm-us",
     "city": "Savannah",
     "state": "GA",
     "timezone": "America/Phoenix"
@@ -49,6 +54,7 @@
     "coordinates": [33.4949, -111.9217],
     "icon": "logos/brotherly.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/654697/messages",
+    "linkedin": "https://www.linkedin.com/company/brotherly-seo",
     "city": "Scottsdale",
     "state": "AZ",
     "timezone": "America/Phoenix"
@@ -58,6 +64,7 @@
     "coordinates": [29.8922, -81.3139],
     "icon": "logos/builders.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/546553/messages",
+    "linkedin": "https://www.linkedin.com/company/businessbldrs",
     "city": "St Augustine",
     "state": "FL",
     "timezone": "America/New_York"
@@ -67,6 +74,7 @@
     "coordinates": [39.9634, -74.1873],
     "icon": "logos/conduit.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/604890/messages",
+    "linkedin": "https://www.linkedin.com/company/conduitdigital",
     "city": "Tom's River",
     "state": "NJ",
     "timezone": "America/New_York"
@@ -76,6 +84,7 @@
     "coordinates": [30.2672, -97.7431],
     "icon": "logos/dozanu.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/593674/messages",
+    "linkedin": "https://www.linkedin.com/company/dozanu",
     "city": "Austin",
     "state": "TX",
     "timezone": "America/Chicago"
@@ -85,6 +94,7 @@
     "coordinates": [32.7157, -117.1611],
     "icon": "logos/harbor.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/665692/messages",
+    "linkedin": "https://www.linkedin.com/company/my-harbor-co",
     "city": "San Diego",
     "state": "CA",
     "timezone": "America/Los_Angeles"
@@ -94,6 +104,7 @@
     "coordinates": [28.5384, -81.3789],
     "icon": "logos/innocom.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/664477/messages",
+    "linkedin": "https://www.linkedin.com/company/innocom-agency",
     "city": "Orlando",
     "state": "FL",
     "timezone": "America/New_York"
@@ -103,6 +114,7 @@
     "coordinates": [32.9595, -117.2653],
     "icon": "logos/jt.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/609416/messages",
+    "linkedin": "https://www.linkedin.com/company/jacob-tyler-creative-group",
     "city": "Del Mar",
     "state": "CA",
     "timezone": "America/Los_Angeles"
@@ -112,24 +124,27 @@
     "coordinates": [32.4753, -97.0103],
     "icon": "logos/jameson.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/666724/messages",
+    "linkedin": "https://www.linkedin.com/company/jameson-grace-marketing",
     "city": "Midlothian",
     "state": "TX",
     "timezone": "America/Chicago"
   },
    {
     "name": "JXM",
-    "coordinates": [29.4252, -98.4946],
+    "coordinates": [42.5449, -71.6482],
     "icon": "logos/jxm.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/501209/messages",
-    "city": "San Antonio",
-    "state": "TX",
-    "timezone": "America/Chicago"
+    "linkedin": "https://www.linkedin.com/company/tunetojxm",
+    "city": "Shirley",
+    "state": "MA",
+    "timezone": "America/New_York"
   },
   {
     "name": "Lion Bolt Media",
     "coordinates": [42.3555, -71.0565],
     "icon": "logos/lion.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/663906/messages",
+    "linkedin": "https://www.linkedin.com/company/lionboltmedia",
     "city": "Boston",
     "state": "MA",
     "timezone": "America/New_York"
@@ -139,6 +154,7 @@
     "coordinates": [41.881832, -87.623177],
     "icon": "logos/jack.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/652777/messages",
+    "linkedin": "https://www.linkedin.com/company/little-jack-marketing",
     "city": "Chicago",
     "state": "IL",
     "timezone": "America/Chicago"
@@ -148,24 +164,27 @@
     "coordinates": [40.6884, -75.2207],
     "icon": "logos/maverick.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/610851/messages",
+    "linkedin": "https://www.linkedin.com/company/maverick-media-llc",
     "city": "Easton",
     "state": "PA",
     "timezone": "America/New_York"
   },
    {
     "name": "Maximum Media & PR",
-    "coordinates": [43.6532, -79.3832],
+    "coordinates": [40.7580, -73.9855],
     "icon": "logos/maximum.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/624066/messages",
-    "city": "Toronto",
-    "state": "ON",
-    "timezone": "America/Toronto"
+    "linkedin": "https://www.linkedin.com/company/maximum-media-pr",
+    "city": "Manhattan",
+    "state": "NY",
+    "timezone": "America/New_York"
   },
   {
     "name": "Revalize",
     "coordinates": [30.3298, -81.6592],
     "icon": "logos/revalize.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/603070/messages",
+    "linkedin": "https://www.linkedin.com/company/revalize",
     "city": "Jacksonville",
     "state": "FL",
     "timezone": "America/New_York"
@@ -175,6 +194,7 @@
     "coordinates": [36.0948, -80.2434],
     "icon": "logos/reuben.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/576060/messages",
+    "linkedin": "https://www.linkedin.com/company/the-reuben-rink-company",
     "city": "Winston-Salem",
     "state": "NC",
     "timezone": "America/New_York"
@@ -184,6 +204,7 @@
     "coordinates": [34.0008, -81.0351],
     "icon": "logos/rhodes.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/646687/messages",
+    "linkedin": "https://www.linkedin.com/company/rhodesbranding",
     "city": "Columbia",
     "state": "SC",
     "timezone": "America/New_York"  
@@ -193,6 +214,7 @@
     "coordinates": [43.0410, -87.9097],
     "icon": "logos/snacktime.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/666350/messages",
+    "linkedin": "https://www.linkedin.com/company/snacktime-brands",
     "city": "Milwaukee",
     "state": "WI",
     "timezone": "America/Chicago"  
@@ -202,6 +224,7 @@
     "coordinates": [39.2905, -76.6104],
     "icon": "logos/stevenson.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/602457/messages",
+    "linkedin": "https://www.linkedin.com/school/stevenson-university",
     "city": "Baltimore",
     "state": "MD",
     "timezone": "America/New_York"  
@@ -211,6 +234,7 @@
     "coordinates": [28.9270, -82.0038],
     "icon": "logos/victory.png",
     "website": "https://conduitdigital.teamwork.com/app/projects/626743/messages",
+    "linkedin": "https://www.linkedin.com/company/victoryproductions",
     "city": "The Villages",
     "state": "FL",
     "timezone": "America/New_York"
