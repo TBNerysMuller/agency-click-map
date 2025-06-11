@@ -106,8 +106,9 @@ body, html {
 
 /* Key Container */
 #agency-key {
+  display: block; /* hidden by default for mobile */
   position: absolute;
-  top: 130px !important;/* lowered to clear zoom controls */
+  top: 235px !important;/* lowered to clear zoom controls */
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
@@ -116,7 +117,6 @@ body, html {
   font-family: 'Poppins', sans-serif;
   color: black;
   max-width: 220px;
-  display: none; /* hidden by default for mobile */
 }
 
 .key-entry {
@@ -284,13 +284,13 @@ body, html {
   #toggle-key {
     display: block;
     position: absolute;
-    top: 40px;
+    top: 35px;
     right: 12px;
     background-color: #00a8e9;
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    padding: 6px 12px;
+    font-size: 12px;
+    padding: 4px 10px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
@@ -299,7 +299,7 @@ body, html {
 
   #agency-key {
     display: none;
-    top: 130px !important;
+    top: 235px !important;
     left: 10px;
     width: 85%;
     max-height: 45vh;
@@ -307,6 +307,11 @@ body, html {
     background-color: rgba(0, 168, 233, 0.95);
     padding: 10px;
     border-radius: 10px;
+  }
+  
+  /* Toggle makes it reappear */
+  #agency-key.show {
+    display: block;
   }
 
   .key-entry {
