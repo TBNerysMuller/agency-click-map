@@ -36,11 +36,18 @@ body, html {
   width: 100%;
   background-color: #000;
   color: white;
+  padding: 10px 20px;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  font-family: 'Poppins', sans-serif;
+  width: 100%;
 }
 
 .logo-title-wrapper {
@@ -54,18 +61,19 @@ body, html {
   font-weight: 700;
   color: #00a8e9;
   white-space: nowrap;
+  text-decoration: none !important;
 }
 
 .est-time-bar {
   font-size: 18px;
   color: #FFFFFF;
   white-space: nowrap;
-  margin-left: auto; /* push time to far right */
+  text-decoration: none !important;
 }
 
 /* Zoom Controls */
 .leaflet-top.leaflet-left {
-  top: 95px; !important;
+  top: 110px;
   left: 10px;
   z-index: 1000;
 }
@@ -85,21 +93,21 @@ body, html {
 /* Key Container */
 #agency-key {
   position: absolute;
-  top: 180px; /* was 250px — shift up */
+  top: 110px;
   left: 20px;
   z-index: 900;
   background-color: #00a8e9cc;
-  padding: 8px 12px; /* was 10px 15px */
+  padding: 8px 12px;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
   color: black;
-  max-width: 220px; /* slightly narrower */
+  max-width: 220px;
 }
 
 .key-entry {
   display: flex;
   align-items: center;
-  margin-bottom: 6px; /* was 8px */
+  margin-bottom: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -110,7 +118,7 @@ body, html {
 }
 
 .key-entry img {
-  width: 18px; /* was 20px */
+  width: 18px;
   height: 18px;
   margin-right: 8px;
   border-radius: 50%;
@@ -119,7 +127,7 @@ body, html {
 }
 
 .key-entry span {
-  font-size: 12px; /* was 13px */
+  font-size: 12px;
   color: black;
 }
 
@@ -241,9 +249,10 @@ body, html {
   }
 
   .logo-title-wrapper {
-    width: 100%;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   #map-title {
@@ -252,18 +261,23 @@ body, html {
     flex-shrink: 1;
   }
 
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
   .est-time-bar {
-    width: 50%;
     font-size: 13px;
+    width: 60%;
+    text-align: left;
     padding-left: 0;
-    margin-top: 4px;
+    text-decoration: none !important;
   }
 
   #toggle-key {
     display: block;
-    position: absolute;
-    right: 12px;
-    top: 55px; /* Second line */
     background-color: #00a8e9;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -276,7 +290,7 @@ body, html {
   }
 
   #agency-key {
-    top: 95px !important;
+    top: 115px !important;
     left: 10px;
     width: 85%;
     max-height: 45vh;
@@ -296,3 +310,4 @@ body, html {
     height: 22px;
   }
 }
+
