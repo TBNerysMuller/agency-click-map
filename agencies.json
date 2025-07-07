@@ -100,16 +100,6 @@
     "timezone": "America/New_York"
   },
   {
-    "name": "Innocom Agency",
-    "coordinates": [28.5384, -81.3789],
-    "icon": "logos/innocom.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/664477/messages",
-    "linkedin": "https://www.linkedin.com/company/innocom-agency",
-    "city": "Orlando",
-    "state": "FL",
-    "timezone": "America/New_York"
-  },
-  {
     "name": "Jacob Tyler",
     "coordinates": [32.9595, -117.2653],
     "icon": "logos/jt.png",
@@ -159,7 +149,17 @@
     "state": "IL",
     "timezone": "America/Chicago"
   },
-  {
+    {
+    "name": "Market Genesis",
+    "coordinates": [40.128412, -75.552945],
+    "icon": "logos/marketgenesis.png",
+    "website": "https://conduitdigital.teamwork.com/app/projects/668190/messages",
+    "linkedin": "https://www.linkedin.com/company/marketgenesis/",
+    "city": "Phoenixville",
+    "state": "PA",
+    "timezone": "America/New_York"
+  },
+    {
     "name": "Maverick Media",
     "coordinates": [40.6884, -75.2207],
     "icon": "logos/maverick.png",
@@ -179,7 +179,7 @@
     "state": "NY",
     "timezone": "America/New_York"
   },
-  {
+    {
     "name": "Revalize",
     "coordinates": [30.3298, -81.6592],
     "icon": "logos/revalize.png",
@@ -209,7 +209,7 @@
     "state": "SC",
     "timezone": "America/New_York"  
   },
-  {
+    {
     "name": "Snacktime Brands",
     "coordinates": [43.0410, -87.9097],
     "icon": "logos/snacktime.png",
@@ -219,7 +219,7 @@
     "state": "WI",
     "timezone": "America/Chicago"  
   },
-  {
+    {
     "name": "Stevenson University",
     "coordinates": [39.2905, -76.6104],
     "icon": "logos/stevenson.png",
@@ -229,7 +229,7 @@
     "state": "MD",
     "timezone": "America/New_York"  
   },
-  {
+    {
     "name": "Victory Productions",
     "coordinates": [28.9270, -82.0038],
     "icon": "logos/victory.png",
