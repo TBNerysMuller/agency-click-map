@@ -59,7 +59,7 @@
     "state": "AZ",
     "timezone": "America/Phoenix"
   },
-   {
+  {
     "name": "Business Builders",
     "coordinates": [29.8922, -81.3139],
     "icon": "logos/builders.png",
@@ -79,7 +79,7 @@
     "state": "NJ",
     "timezone": "America/New_York"
   },
-   {
+  {
     "name": "DBXS Marketing",
     "coordinates": [33.7709355, -118.3727945],
     "icon": "logos/dbxs.jpeg",
@@ -89,7 +89,7 @@
     "state": "CA",
     "timezone": "America/Los_Angeles"
   },
-   {
+  {
     "name": "Harbor Collective",
     "coordinates": [28.2189, -82.4576],
     "icon": "logos/harbor.png",
@@ -109,7 +109,7 @@
     "state": "CA",
     "timezone": "America/Los_Angeles"
   },
-   {
+  {
     "name": "Jameson Grace Marketing",
     "coordinates": [32.4753, -97.0103],
     "icon": "logos/jameson.png",
@@ -119,7 +119,7 @@
     "state": "TX",
     "timezone": "America/Dallas"
   },
-   {
+  {
     "name": "JXM",
     "coordinates": [42.5449, -71.6482],
     "icon": "logos/jxm.png",
@@ -139,7 +139,7 @@
     "state": "IL",
     "timezone": "America/Chicago"
   },
-    {
+  {
     "name": "Market Genesis",
     "coordinates": [40.128412, -75.552945],
     "icon": "logos/marketgenesis.png",
@@ -149,7 +149,7 @@
     "state": "PA",
     "timezone": "America/New_York"
   },
-    {
+  {
     "name": "Maverick Media",
     "coordinates": [40.6884, -75.2207],
     "icon": "logos/maverick.png",
@@ -159,7 +159,7 @@
     "state": "PA",
     "timezone": "America/New_York"
   },
-   {
+  {
     "name": "Maximum Media & PR",
     "coordinates": [40.7580, -73.9855],
     "icon": "logos/maximum.png",
@@ -179,7 +179,7 @@
     "state": "TX",
     "timezone": "America/Dallas"
   },
-    {
+  {
     "name": "Revalize",
     "coordinates": [30.3298, -81.6592],
     "icon": "logos/revalize.png",
@@ -189,7 +189,7 @@
     "state": "FL",
     "timezone": "America/New_York"
   },
-   {
+  {
     "name": "The Reuben Rink Company",
     "coordinates": [36.0948, -80.2434],
     "icon": "logos/reuben.png",
@@ -199,7 +199,7 @@
     "state": "NC",
     "timezone": "America/New_York"
   },
-   {
+  {
     "name": "Rhodes Branding",
     "coordinates": [34.0008, -81.0351],
     "icon": "logos/rhodes.png",
@@ -209,7 +209,7 @@
     "state": "SC",
     "timezone": "America/New_York"  
   },
-    {
+  {
     "name": "Schafer Condon Carter",
     "coordinates": [41.885371, -87.6570015],
     "icon": "logos/scc.svg",
@@ -219,7 +219,7 @@
     "state": "IL",
     "timezone": "America/Chicago"  
   },
-    {
+  {
     "name": "Snacktime Brands",
     "coordinates": [43.0410, -87.9097],
     "icon": "logos/snacktime.png",
@@ -229,7 +229,7 @@
     "state": "WI",
     "timezone": "America/Chicago"  
   },
-    {
+  {
     "name": "Stevenson University",
     "coordinates": [39.2905, -76.6104],
     "icon": "logos/stevenson.png",
@@ -249,7 +249,7 @@
     "state": "NV",
     "timezone": "America/Los_Angeles"  
   },
-    {
+  {
     "name": "Victory Productions",
     "coordinates": [28.9270, -82.0038],
     "icon": "logos/victory.png",
