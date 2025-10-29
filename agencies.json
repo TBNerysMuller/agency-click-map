@@ -171,8 +171,8 @@
   },
   {
     "name": "OneBonfire",
-    "coordinates": [33.1497, 96.8356],
-    "icon": "logos/onebonfire.jpeg",
+    "coordinates": [33.1497, -96.8356],
+    "icon": "logos/onebonfire.png",
     "website": "https://evilgenius2.teamwork.com/app/projects/1230021/messages",
     "linkedin": "https://www.linkedin.com/company/onebonfire",
     "city": "Frisco",
