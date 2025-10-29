@@ -79,15 +79,15 @@
     "state": "NJ",
     "timezone": "America/New_York"
   },
-  {
-    "name": "Dozanü Innovations",
-    "coordinates": [30.2672, -97.7431],
-    "icon": "logos/dozanu.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/593674/messages",
-    "linkedin": "https://www.linkedin.com/company/dozanu",
-    "city": "Austin",
-    "state": "TX",
-    "timezone": "America/Chicago"
+   {
+    "name": "DBXS Marketing",
+    "coordinates": [33.7709355, -118.3727945],
+    "icon": "logos/dbxs.jpeg",
+    "website": "https://conduitdigital.teamwork.com/app/projects/673721/messages",
+    "linkedin": "https://www.linkedin.com/company/dbxs-marketing",
+    "city": "Rolling Hills",
+    "state": "CA",
+    "timezone": "America/Los_Angeles"
   },
    {
     "name": "Harbor Collective",
@@ -117,7 +117,7 @@
     "linkedin": "https://www.linkedin.com/company/jameson-grace-marketing",
     "city": "Midlothian",
     "state": "TX",
-    "timezone": "America/Chicago"
+    "timezone": "America/Dallas"
   },
    {
     "name": "JXM",
@@ -126,16 +126,6 @@
     "website": "https://conduitdigital.teamwork.com/app/projects/501209/messages",
     "linkedin": "https://www.linkedin.com/company/tunetojxm",
     "city": "Shirley",
-    "state": "MA",
-    "timezone": "America/New_York"
-  },
-  {
-    "name": "Lion Bolt Media",
-    "coordinates": [42.3555, -71.0565],
-    "icon": "logos/lion.png",
-    "website": "https://conduitdigital.teamwork.com/app/projects/663906/messages",
-    "linkedin": "https://www.linkedin.com/company/lionboltmedia",
-    "city": "Boston",
     "state": "MA",
     "timezone": "America/New_York"
   },
@@ -179,6 +169,16 @@
     "state": "NY",
     "timezone": "America/New_York"
   },
+  {
+    "name": "OneBonfire",
+    "coordinates": [33.1497, 96.8356],
+    "icon": "logos/onebonfire.jpeg",
+    "website": "https://evilgenius2.teamwork.com/app/projects/1230021/messages",
+    "linkedin": "https://www.linkedin.com/company/onebonfire",
+    "city": "Frisco",
+    "state": "TX",
+    "timezone": "America/Dallas"
+  },
     {
     "name": "Revalize",
     "coordinates": [30.3298, -81.6592],
@@ -208,6 +208,16 @@
     "city": "Columbia",
     "state": "SC",
     "timezone": "America/New_York"  
+  },
+    {
+    "name": "Schafer Condon Carter",
+    "coordinates": [41.885371, -87.6570015],
+    "icon": "logos/scc.svg",
+    "website": "https://conduitdigital.teamwork.com/app/projects/673335/messages,
+    "linkedin": "https://www.linkedin.com/company/schafer-condon-carter/",
+    "city": "Chicago",
+    "state": "IL",
+    "timezone": "America/Chicago"  
   },
     {
     "name": "Snacktime Brands",
